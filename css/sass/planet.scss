@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  user-select: none;
+  background: rgb(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: grid;
+  place-content: center;
+  perspective: 10000px;
+  @for $i from 0 to 200 {
+    .star:nth-of-type(#{$i + 1}) {
+      --topS: #{97vh / 200 * $i};
+      --leftS: #{97vw / 200 * random(200)};
+      --hueS: #{5000 / 100 * $i};
+    }
+  }
+  .star {
+    position: absolute;
+    top: var(--topS);
+    left: var(--leftS);
+    background-color: hsl(calc(var(--hueS) * -1), 100%, 70%);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 0.9;
+  }
+}
+
+$P: 5;
+$r: 20px;
+$width: $r * 2;
+$height: $r * 2;
+
+$sqrt3: 1.7320508075688772935274463415059;
+$sqrt6: 2.4494897427831780981972840747059;
+
+// $X: ($P - 1) * $r;
+// $Y: ($P - 1) * $sqrt3 * $r / 2;
+
+// @for $i from 0 to $P {
+//   @for $j from 0 to $P {
+//     .square:nth-of-type(#{($i * $P)+($j + 1)}) {
+//       --tx: #{$width / 2 - $X + 2 * $r * $j + $r * $i};
+//       --ty: #{$height / 2 - $Y + $sqrt3 * $r * $i};
+//       --hue: #{300 / 15 * ($i * $P + ($j + 1))};
+//     }
+//   }
+// }
+
+// @for $i from 0 to $P {
+//   @for $j from $i to $P {
+//     $x: $j - $i;
+//     $y: $i;
+//     $adjust: 0;
+//     @for $k from 0 to $i {
+//       $adjust: $P - $k + $adjust;
+//     }
+//     .square:nth-of-type(#{$adjust+($j - $i + 1)}) {
+//       --tx: #{$width / 2 - $X + 2 * $r * $x + $r * $y};
+//       --ty: #{$height / 2 - $Y + $sqrt3 * $r * $y};
+//       --hue: #{300 / 25 * ($i * $P + ($j + 1))};
+//     }
+//   }
+// }
+
+$X: ($P - 1) * $r;
+$Y: ($P - 1) * $sqrt6 / 3 * $r;
+$Z: ($P - 1) * $sqrt3 * $r / 2;
+
+@for $i from 0 to $P {
+  @for $j from $i to $P {
+    @for $k from $j to $P {
+      $x: $k - $j;
+      $y: $i;
+      $z: $j - $i;
+      $adjust: 0;
+      @for $l from $i to $j {
+        $adjust: $P - $l + $adjust;
+      }
+      $adjust2: 0;
+      @for $m from 0 to $i {
+        $adjust2: 1/2 * ($P - $m) * (($P - $m) + 1) + $adjust2;
+      }
+      .circle:nth-of-type(#{$adjust2 + $adjust+($k - $j + 1)}) {
+        --tx: #{$width / 2 - $X + 2 * $r * $x + $r * $z + $r * $y};
+        --ty: #{$height / 2 - $Y + $sqrt6 / 3 * 2 * $r * $y};
+        --tz: #{-$z + $sqrt3 * $r * $z + $sqrt3 / 3 * $r * $y};
+        --hue: #{300 / 35 * ($adjust2 + $adjust + ($k - $j + 1))};
+      }
+    }
+  }
+}
+
+.container {
+  width: 0px;
+  height: 0px;
+  display: grid;
+  place-content: center;
+  transform-style: preserve-3d;
+  position: relative;
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // transform: translate(var(--tx), var(--ty));
+    transform: translateX(var(--tx)) translateY(var(--ty)) translateZ(var(--tz));
+    width: $width;
+    height: $height;
+    border: solid 1px #000;
+    border-radius: 50%;
+    background-color: hsl(calc(var(--hue) * -1), 100%, 70%);
+
+    //---------------------------------
+  }
+}

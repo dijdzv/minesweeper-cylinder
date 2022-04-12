@@ -1,0 +1,482 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  user-select: none;
+  background: linear-gradient(30deg, #500000 15%, #000050 50%);
+  width: 100vw;
+  height: 100vh;
+  background-size: 200%, 200%;
+  display: grid;
+  place-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff0a;
+}
+
+body .wrap {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+body .wrap:hover {
+  transform: scale(105%);
+}
+
+body .wrap h1 {
+  visibility: hidden;
+  font-size: 9.6rem;
+  font-family: "Vollkorn", serif;
+  font-weight: 900;
+  position: relative;
+  color: #ffffffcc;
+  transform: translateY(40%);
+  animation: toLeft 0.8s 3.7s forwards;
+}
+
+body .wrap h1::before, body .wrap h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: visible;
+}
+
+body .wrap h1::before {
+  animation: typeWrite 2s 0.6s forwards;
+}
+
+body .wrap h1::after {
+  width: 0.1em;
+  background-color: gray;
+  animation: toRight 2s steps(11, start) 0.6s forwards, blink 470ms steps(11) infinite, disappear 3.5s step-end forwards;
+}
+
+body .wrap p {
+  font-size: 8rem;
+  color: #5ec8e9;
+  opacity: 0;
+  transform: translateY(50%) translateX(120%);
+  animation: popUp 0.8s 3.7s forwards;
+  font-style: italic;
+  font-family: "Vollkorn", serif;
+}
+
+body > p {
+  color: #ffffffcc;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  opacity: 0.5;
+  animation: disappear 1s 5.7s ease-in infinite, appear 5.7s;
+}
+
+.animate1 {
+  animation: animate1 5s cubic-bezier(0, 0.7, 0.9, 1) forwards;
+}
+
+@keyframes animate1 {
+  to {
+    background-position: 80%, 80%;
+  }
+}
+
+.animate2 {
+  animation: animate2 0.8s forwards;
+}
+
+@keyframes animate2 {
+  0% {
+    background: linear-gradient(30deg, #500000 15%, #000050 50%);
+  }
+  1% {
+    background: linear-gradient(30deg, #500000 16%, #000050 51%);
+  }
+  2% {
+    background: linear-gradient(30deg, #500000 17%, #000050 52%);
+  }
+  3% {
+    background: linear-gradient(30deg, #500000 18%, #000050 53%);
+  }
+  4% {
+    background: linear-gradient(30deg, #500000 19%, #000050 54%);
+  }
+  5% {
+    background: linear-gradient(30deg, #500000 20%, #000050 55%);
+  }
+  6% {
+    background: linear-gradient(30deg, #500000 21%, #000050 56%);
+  }
+  7% {
+    background: linear-gradient(30deg, #500000 22%, #000050 57%);
+  }
+  8% {
+    background: linear-gradient(30deg, #500000 23%, #000050 58%);
+  }
+  9% {
+    background: linear-gradient(30deg, #500000 24%, #000050 59%);
+  }
+  10% {
+    background: linear-gradient(30deg, #500000 25%, #000050 60%);
+  }
+  11% {
+    background: linear-gradient(30deg, #500000 26%, #000050 61%);
+  }
+  12% {
+    background: linear-gradient(30deg, #500000 27%, #000050 62%);
+  }
+  13% {
+    background: linear-gradient(30deg, #500000 28%, #000050 63%);
+  }
+  14% {
+    background: linear-gradient(30deg, #500000 29%, #000050 64%);
+  }
+  15% {
+    background: linear-gradient(30deg, #500000 30%, #000050 65%);
+  }
+  16% {
+    background: linear-gradient(30deg, #500000 31%, #000050 66%);
+  }
+  17% {
+    background: linear-gradient(30deg, #500000 32%, #000050 67%);
+  }
+  18% {
+    background: linear-gradient(30deg, #500000 33%, #000050 68%);
+  }
+  19% {
+    background: linear-gradient(30deg, #500000 34%, #000050 69%);
+  }
+  20% {
+    background: linear-gradient(30deg, #500000 35%, #000050 70%);
+  }
+  21% {
+    background: linear-gradient(30deg, #500000 36%, #000050 71%);
+  }
+  22% {
+    background: linear-gradient(30deg, #500000 37%, #000050 72%);
+  }
+  23% {
+    background: linear-gradient(30deg, #500000 38%, #000050 73%);
+  }
+  24% {
+    background: linear-gradient(30deg, #500000 39%, #000050 74%);
+  }
+  25% {
+    background: linear-gradient(30deg, #500000 40%, #000050 75%);
+  }
+  26% {
+    background: linear-gradient(30deg, #500000 41%, #000050 76%);
+  }
+  27% {
+    background: linear-gradient(30deg, #500000 42%, #000050 77%);
+  }
+  28% {
+    background: linear-gradient(30deg, #500000 43%, #000050 78%);
+  }
+  29% {
+    background: linear-gradient(30deg, #500000 44%, #000050 79%);
+  }
+  30% {
+    background: linear-gradient(30deg, #500000 45%, #000050 80%);
+  }
+  31% {
+    background: linear-gradient(30deg, #500000 46%, #000050 81%);
+  }
+  32% {
+    background: linear-gradient(30deg, #500000 47%, #000050 82%);
+  }
+  33% {
+    background: linear-gradient(30deg, #500000 48%, #000050 83%);
+  }
+  34% {
+    background: linear-gradient(30deg, #500000 49%, #000050 84%);
+  }
+  35% {
+    background: linear-gradient(30deg, #500000 50%, #000050 85%);
+  }
+  36% {
+    background: linear-gradient(30deg, #500000 51%, #000050 86%);
+  }
+  37% {
+    background: linear-gradient(30deg, #500000 52%, #000050 87%);
+  }
+  38% {
+    background: linear-gradient(30deg, #500000 53%, #000050 88%);
+  }
+  39% {
+    background: linear-gradient(30deg, #500000 54%, #000050 89%);
+  }
+  40% {
+    background: linear-gradient(30deg, #500000 55%, #000050 90%);
+  }
+  41% {
+    background: linear-gradient(30deg, #500000 56%, #000050 91%);
+  }
+  42% {
+    background: linear-gradient(30deg, #500000 57%, #000050 92%);
+  }
+  43% {
+    background: linear-gradient(30deg, #500000 58%, #000050 93%);
+  }
+  44% {
+    background: linear-gradient(30deg, #500000 59%, #000050 94%);
+  }
+  45% {
+    background: linear-gradient(30deg, #500000 60%, #000050 95%);
+  }
+  46% {
+    background: linear-gradient(30deg, #500000 61%, #000050 96%);
+  }
+  47% {
+    background: linear-gradient(30deg, #500000 62%, #000050 97%);
+  }
+  48% {
+    background: linear-gradient(30deg, #500000 63%, #000050 98%);
+  }
+  49% {
+    background: linear-gradient(30deg, #500000 64%, #000050 99%);
+  }
+  50% {
+    background: linear-gradient(30deg, #500000 65%, #000050 100%);
+  }
+  51% {
+    background: linear-gradient(30deg, #500000 66%, #000050 100%);
+  }
+  52% {
+    background: linear-gradient(30deg, #500000 67%, #000050 100%);
+  }
+  53% {
+    background: linear-gradient(30deg, #500000 68%, #000050 100%);
+  }
+  54% {
+    background: linear-gradient(30deg, #500000 69%, #000050 100%);
+  }
+  55% {
+    background: linear-gradient(30deg, #500000 70%, #000050 100%);
+  }
+  56% {
+    background: linear-gradient(30deg, #500000 71%, #000050 100%);
+  }
+  57% {
+    background: linear-gradient(30deg, #500000 72%, #000050 100%);
+  }
+  58% {
+    background: linear-gradient(30deg, #500000 73%, #000050 100%);
+  }
+  59% {
+    background: linear-gradient(30deg, #500000 74%, #000050 100%);
+  }
+  60% {
+    background: linear-gradient(30deg, #500000 75%, #000050 100%);
+  }
+  61% {
+    background: linear-gradient(30deg, #500000 76%, #000050 100%);
+  }
+  62% {
+    background: linear-gradient(30deg, #500000 77%, #000050 100%);
+  }
+  63% {
+    background: linear-gradient(30deg, #500000 78%, #000050 100%);
+  }
+  64% {
+    background: linear-gradient(30deg, #500000 79%, #000050 100%);
+  }
+  65% {
+    background: linear-gradient(30deg, #500000 80%, #000050 100%);
+  }
+  66% {
+    background: linear-gradient(30deg, #500000 81%, #000050 100%);
+  }
+  67% {
+    background: linear-gradient(30deg, #500000 82%, #000050 100%);
+  }
+  68% {
+    background: linear-gradient(30deg, #500000 83%, #000050 100%);
+  }
+  69% {
+    background: linear-gradient(30deg, #500000 84%, #000050 100%);
+  }
+  70% {
+    background: linear-gradient(30deg, #500000 85%, #000050 100%);
+  }
+  71% {
+    background: linear-gradient(30deg, #500000 86%, #000050 100%);
+  }
+  72% {
+    background: linear-gradient(30deg, #500000 87%, #000050 100%);
+  }
+  73% {
+    background: linear-gradient(30deg, #500000 88%, #000050 100%);
+  }
+  74% {
+    background: linear-gradient(30deg, #500000 89%, #000050 100%);
+  }
+  75% {
+    background: linear-gradient(30deg, #500000 90%, #000050 100%);
+  }
+  76% {
+    background: linear-gradient(30deg, #500000 91%, #000050 100%);
+  }
+  77% {
+    background: linear-gradient(30deg, #500000 92%, #000050 100%);
+  }
+  78% {
+    background: linear-gradient(30deg, #500000 93%, #000050 100%);
+  }
+  79% {
+    background: linear-gradient(30deg, #500000 94%, #000050 100%);
+  }
+  80% {
+    background: linear-gradient(30deg, #500000 95%, #000050 100%);
+  }
+  81% {
+    background: linear-gradient(30deg, #500000 96%, #000050 100%);
+  }
+  82% {
+    background: linear-gradient(30deg, #500000 97%, #000050 100%);
+  }
+  83% {
+    background: linear-gradient(30deg, #500000 98%, #000050 100%);
+  }
+  84% {
+    background: linear-gradient(30deg, #500000 99%, #000050 100%);
+  }
+  85% {
+    background: linear-gradient(30deg, #500000 100%, #000050 100%);
+  }
+  100% {
+    background: linear-gradient(30deg, #500000 100%, #000050 100%);
+  }
+}
+
+@keyframes typeWrite {
+  0% {
+    content: "";
+  }
+  7% {
+    content: "M";
+  }
+  16% {
+    content: "Mi";
+  }
+  25% {
+    content: "Min";
+  }
+  34% {
+    content: "Mine";
+  }
+  43% {
+    content: "Mines";
+  }
+  52% {
+    content: "Minesw";
+  }
+  61% {
+    content: "Mineswe";
+  }
+  70% {
+    content: "Mineswee";
+  }
+  79% {
+    content: "Minesweep";
+  }
+  88% {
+    content: "Minesweepe";
+  }
+  98% {
+    content: "Minesweeper";
+  }
+  100% {
+    content: "Minesweeper";
+  }
+}
+
+@keyframes toRight {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: translateY(-55%) translateX(135%);
+  }
+}
+
+@keyframes toLeft {
+  to {
+    transform: translateX(-20%) translateY(40%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translate(0, 50%);
+    opacity: 0;
+  }
+  83% {
+    transform: translate(0, 50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body .wrap h1 {
+    font-size: 4.5rem;
+    animation: none;
+    transform: translateY(-30%);
+    visibility: visible;
+  }
+  body .wrap h1::before, body .wrap h1::after {
+    animation: none;
+    visibility: hidden;
+  }
+  body .wrap p {
+    font-size: 3.5rem;
+    transform: translateY(50%);
+    animation: popUp 0.8s 0.3s forwards;
+  }
+  body > p {
+    display: none;
+  }
+  @keyframes popUp {
+    to {
+      opacity: 1;
+      transform: translateY(30%);
+    }
+  }
+}
+/*# sourceMappingURL=index.css.map */

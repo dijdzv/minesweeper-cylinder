@@ -1,0 +1,5120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  user-select: none;
+  background: linear-gradient(30deg, #500000 15%, #000050 50%);
+  background-size: 200% 200%;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+body #wrapAll {
+  width: 97vw;
+  height: 97vh;
+  display: grid;
+  place-content: center;
+  gap: 2rem 1rem;
+  grid-template-rows: 4.8rem 1fr;
+  grid-template-columns: 35rem 600px 35rem;
+  grid-template-areas: "wrapLeft wrapTop wrapRight" "wrapLeft wrapCenter wrapRight";
+}
+
+body #wrapAll #wrapLeft {
+  grid-area: wrapLeft;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+body #wrapAll #wrapLeft .fa-eye-slash {
+  position: absolute;
+  top: 52.6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff22;
+  font-size: 5rem;
+  display: none;
+  width: 35rem;
+  height: 63.5rem;
+  text-align: center;
+  line-height: 63.5rem;
+  cursor: pointer;
+}
+
+body #wrapAll #wrapLeft .fa-eye-slash:hover {
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty {
+  position: relative;
+  background-color: #ffffff22;
+  width: 35rem;
+  padding-top: 1.6rem;
+  border-radius: 3px;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .fa-eye {
+  position: absolute;
+  top: 1rem;
+  left: 31.5rem;
+  color: #ffffffdd;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .fa-eye:hover {
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty {
+  height: 8.4rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty:nth-of-type(odd) p {
+  margin-left: 8.3rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty:nth-of-type(odd) .wrapDegreeOfDifficultyBtn {
+  margin-left: 1.6rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty:nth-of-type(even) p {
+  margin-left: 20rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty:nth-of-type(even) .wrapDegreeOfDifficultyBtn {
+  margin-left: 13.4rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty p {
+  width: max-content;
+  color: #6aa;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty .wrapDegreeOfDifficultyBtn {
+  width: 20rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+body #wrapAll #wrapLeft #wrapDifficulty .wrapDegreeOfDifficulty .wrapDegreeOfDifficultyBtn .degreeOfDifficultyBtn {
+  width: 6.4rem;
+  height: 2.4rem;
+  background-color: #ffffffaa;
+  color: #005;
+}
+
+body #wrapAll #wrapTop {
+  grid-area: wrapTop;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+body #wrapAll #wrapTop div {
+  position: relative;
+  height: 5.6rem;
+  border: solid 2px;
+  font-size: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+body #wrapAll #wrapTop div i {
+  margin-right: 1.5rem;
+}
+
+body #wrapAll #wrapTop #sizeBox {
+  color: #6aa;
+}
+
+body #wrapAll #wrapTop #sizeBox:hover {
+  background-color: #6aa;
+  color: #1d0034;
+}
+
+body #wrapAll #wrapTop #sizeBox i {
+  margin-right: 0;
+  font-size: 2.5rem;
+}
+
+body #wrapAll #wrapTop #elapsedTimeBox {
+  position: relative;
+  cursor: pointer;
+  color: #e5a;
+}
+
+body #wrapAll #wrapTop #elapsedTimeBox:hover {
+  background-color: #e5a;
+  color: #1d0034;
+}
+
+@keyframes popUp {
+  to {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+body #wrapAll #wrapTop #elapsedTimeBox #addTimeObj {
+  display: none;
+  position: absolute;
+  font-size: 2rem;
+  top: 0;
+  left: 90%;
+  z-index: 10;
+  animation: popUp 1s forwards;
+}
+
+body #wrapAll #wrapTop #flagCountBox {
+  color: #aa5;
+}
+
+body #wrapAll #wrapTop #flagCountBox:hover {
+  background-color: #aa5;
+  color: #1d0034;
+}
+
+body #wrapAll #wrapTop #mineCountBox {
+  color: #f55;
+}
+
+body #wrapAll #wrapTop #mineCountBox:hover {
+  background-color: #f55;
+  color: #1d0034;
+}
+
+body #wrapAll #wrapCenter {
+  grid-area: wrapCenter;
+  position: relative;
+  display: grid;
+  place-content: center;
+  perspective: 1000px;
+}
+
+body #wrapAll #wrapCenter #board {
+  transform: rotateY(0deg);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(1) {
+  --length: -243px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(2) {
+  --angle: 18deg;
+  --hue: 18;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(2) {
+  --length: -189px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(3) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(3) {
+  --length: -135px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(4) {
+  --angle: 54deg;
+  --hue: 54;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(4) {
+  --length: -81px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(5) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(5) {
+  --length: -27px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(6) {
+  --angle: 90deg;
+  --hue: 90;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(6) {
+  --length: 27px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(7) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(7) {
+  --length: 81px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(8) {
+  --angle: 126deg;
+  --hue: 126;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(8) {
+  --length: 135px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(9) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(9) {
+  --length: 189px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(10) {
+  --angle: 162deg;
+  --hue: 162;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(10) {
+  --length: 243px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(11) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(11) {
+  --length: 297px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(12) {
+  --angle: 198deg;
+  --hue: 198;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(12) {
+  --length: 351px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(13) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(13) {
+  --length: 405px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(14) {
+  --angle: 234deg;
+  --hue: 234;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(14) {
+  --length: 459px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(15) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(15) {
+  --length: 513px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(16) {
+  --angle: 270deg;
+  --hue: 270;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(16) {
+  --length: 567px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(17) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(17) {
+  --length: 621px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(18) {
+  --angle: 306deg;
+  --hue: 306;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(18) {
+  --length: 675px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(19) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(19) {
+  --length: 729px;
+}
+
+body #wrapAll #wrapCenter #board .square10:nth-of-type(20) {
+  --angle: 342deg;
+  --hue: 342;
+}
+
+body #wrapAll #wrapCenter #board .row10:nth-of-type(20) {
+  --length: 783px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(1) {
+  --length: -252px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(2) {
+  --angle: 12deg;
+  --hue: 12;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(2) {
+  --length: -216px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(3) {
+  --angle: 24deg;
+  --hue: 24;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(3) {
+  --length: -180px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(4) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(4) {
+  --length: -144px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(5) {
+  --angle: 48deg;
+  --hue: 48;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(5) {
+  --length: -108px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(6) {
+  --angle: 60deg;
+  --hue: 60;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(6) {
+  --length: -72px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(7) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(7) {
+  --length: -36px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(8) {
+  --angle: 84deg;
+  --hue: 84;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(8) {
+  --length: 0px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(9) {
+  --angle: 96deg;
+  --hue: 96;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(9) {
+  --length: 36px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(10) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(10) {
+  --length: 72px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(11) {
+  --angle: 120deg;
+  --hue: 120;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(11) {
+  --length: 108px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(12) {
+  --angle: 132deg;
+  --hue: 132;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(12) {
+  --length: 144px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(13) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(13) {
+  --length: 180px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(14) {
+  --angle: 156deg;
+  --hue: 156;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(14) {
+  --length: 216px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(15) {
+  --angle: 168deg;
+  --hue: 168;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(15) {
+  --length: 252px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(16) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(16) {
+  --length: 288px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(17) {
+  --angle: 192deg;
+  --hue: 192;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(17) {
+  --length: 324px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(18) {
+  --angle: 204deg;
+  --hue: 204;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(18) {
+  --length: 360px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(19) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(19) {
+  --length: 396px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(20) {
+  --angle: 228deg;
+  --hue: 228;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(20) {
+  --length: 432px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(21) {
+  --angle: 240deg;
+  --hue: 240;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(21) {
+  --length: 468px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(22) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(22) {
+  --length: 504px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(23) {
+  --angle: 264deg;
+  --hue: 264;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(23) {
+  --length: 540px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(24) {
+  --angle: 276deg;
+  --hue: 276;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(24) {
+  --length: 576px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(25) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(25) {
+  --length: 612px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(26) {
+  --angle: 300deg;
+  --hue: 300;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(26) {
+  --length: 648px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(27) {
+  --angle: 312deg;
+  --hue: 312;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(27) {
+  --length: 684px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(28) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(28) {
+  --length: 720px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(29) {
+  --angle: 336deg;
+  --hue: 336;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(29) {
+  --length: 756px;
+}
+
+body #wrapAll #wrapCenter #board .square15:nth-of-type(30) {
+  --angle: 348deg;
+  --hue: 348;
+}
+
+body #wrapAll #wrapCenter #board .row15:nth-of-type(30) {
+  --length: 792px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(1) {
+  --length: -256.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(2) {
+  --angle: 9deg;
+  --hue: 9;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(2) {
+  --length: -229.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(3) {
+  --angle: 18deg;
+  --hue: 18;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(3) {
+  --length: -202.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(4) {
+  --angle: 27deg;
+  --hue: 27;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(4) {
+  --length: -175.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(5) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(5) {
+  --length: -148.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(6) {
+  --angle: 45deg;
+  --hue: 45;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(6) {
+  --length: -121.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(7) {
+  --angle: 54deg;
+  --hue: 54;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(7) {
+  --length: -94.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(8) {
+  --angle: 63deg;
+  --hue: 63;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(8) {
+  --length: -67.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(9) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(9) {
+  --length: -40.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(10) {
+  --angle: 81deg;
+  --hue: 81;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(10) {
+  --length: -13.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(11) {
+  --angle: 90deg;
+  --hue: 90;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(11) {
+  --length: 13.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(12) {
+  --angle: 99deg;
+  --hue: 99;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(12) {
+  --length: 40.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(13) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(13) {
+  --length: 67.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(14) {
+  --angle: 117deg;
+  --hue: 117;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(14) {
+  --length: 94.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(15) {
+  --angle: 126deg;
+  --hue: 126;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(15) {
+  --length: 121.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(16) {
+  --angle: 135deg;
+  --hue: 135;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(16) {
+  --length: 148.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(17) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(17) {
+  --length: 175.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(18) {
+  --angle: 153deg;
+  --hue: 153;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(18) {
+  --length: 202.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(19) {
+  --angle: 162deg;
+  --hue: 162;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(19) {
+  --length: 229.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(20) {
+  --angle: 171deg;
+  --hue: 171;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(20) {
+  --length: 256.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(21) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(21) {
+  --length: 283.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(22) {
+  --angle: 189deg;
+  --hue: 189;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(22) {
+  --length: 310.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(23) {
+  --angle: 198deg;
+  --hue: 198;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(23) {
+  --length: 337.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(24) {
+  --angle: 207deg;
+  --hue: 207;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(24) {
+  --length: 364.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(25) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(25) {
+  --length: 391.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(26) {
+  --angle: 225deg;
+  --hue: 225;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(26) {
+  --length: 418.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(27) {
+  --angle: 234deg;
+  --hue: 234;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(27) {
+  --length: 445.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(28) {
+  --angle: 243deg;
+  --hue: 243;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(28) {
+  --length: 472.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(29) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(29) {
+  --length: 499.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(30) {
+  --angle: 261deg;
+  --hue: 261;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(30) {
+  --length: 526.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(31) {
+  --angle: 270deg;
+  --hue: 270;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(31) {
+  --length: 553.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(32) {
+  --angle: 279deg;
+  --hue: 279;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(32) {
+  --length: 580.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(33) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(33) {
+  --length: 607.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(34) {
+  --angle: 297deg;
+  --hue: 297;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(34) {
+  --length: 634.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(35) {
+  --angle: 306deg;
+  --hue: 306;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(35) {
+  --length: 661.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(36) {
+  --angle: 315deg;
+  --hue: 315;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(36) {
+  --length: 688.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(37) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(37) {
+  --length: 715.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(38) {
+  --angle: 333deg;
+  --hue: 333;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(38) {
+  --length: 742.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(39) {
+  --angle: 342deg;
+  --hue: 342;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(39) {
+  --length: 769.5px;
+}
+
+body #wrapAll #wrapCenter #board .square20:nth-of-type(40) {
+  --angle: 351deg;
+  --hue: 351;
+}
+
+body #wrapAll #wrapCenter #board .row20:nth-of-type(40) {
+  --length: 796.5px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(1) {
+  --length: -259.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(2) {
+  --angle: 7.2deg;
+  --hue: 7.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(2) {
+  --length: -237.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(3) {
+  --angle: 14.4deg;
+  --hue: 14.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(3) {
+  --length: -216px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(4) {
+  --angle: 21.6deg;
+  --hue: 21.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(4) {
+  --length: -194.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(5) {
+  --angle: 28.8deg;
+  --hue: 28.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(5) {
+  --length: -172.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(6) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(6) {
+  --length: -151.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(7) {
+  --angle: 43.2deg;
+  --hue: 43.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(7) {
+  --length: -129.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(8) {
+  --angle: 50.4deg;
+  --hue: 50.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(8) {
+  --length: -108px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(9) {
+  --angle: 57.6deg;
+  --hue: 57.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(9) {
+  --length: -86.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(10) {
+  --angle: 64.8deg;
+  --hue: 64.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(10) {
+  --length: -64.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(11) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(11) {
+  --length: -43.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(12) {
+  --angle: 79.2deg;
+  --hue: 79.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(12) {
+  --length: -21.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(13) {
+  --angle: 86.4deg;
+  --hue: 86.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(13) {
+  --length: 0px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(14) {
+  --angle: 93.6deg;
+  --hue: 93.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(14) {
+  --length: 21.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(15) {
+  --angle: 100.8deg;
+  --hue: 100.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(15) {
+  --length: 43.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(16) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(16) {
+  --length: 64.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(17) {
+  --angle: 115.2deg;
+  --hue: 115.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(17) {
+  --length: 86.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(18) {
+  --angle: 122.4deg;
+  --hue: 122.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(18) {
+  --length: 108px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(19) {
+  --angle: 129.6deg;
+  --hue: 129.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(19) {
+  --length: 129.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(20) {
+  --angle: 136.8deg;
+  --hue: 136.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(20) {
+  --length: 151.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(21) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(21) {
+  --length: 172.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(22) {
+  --angle: 151.2deg;
+  --hue: 151.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(22) {
+  --length: 194.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(23) {
+  --angle: 158.4deg;
+  --hue: 158.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(23) {
+  --length: 216px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(24) {
+  --angle: 165.6deg;
+  --hue: 165.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(24) {
+  --length: 237.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(25) {
+  --angle: 172.8deg;
+  --hue: 172.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(25) {
+  --length: 259.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(26) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(26) {
+  --length: 280.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(27) {
+  --angle: 187.2deg;
+  --hue: 187.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(27) {
+  --length: 302.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(28) {
+  --angle: 194.4deg;
+  --hue: 194.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(28) {
+  --length: 324px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(29) {
+  --angle: 201.6deg;
+  --hue: 201.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(29) {
+  --length: 345.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(30) {
+  --angle: 208.8deg;
+  --hue: 208.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(30) {
+  --length: 367.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(31) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(31) {
+  --length: 388.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(32) {
+  --angle: 223.2deg;
+  --hue: 223.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(32) {
+  --length: 410.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(33) {
+  --angle: 230.4deg;
+  --hue: 230.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(33) {
+  --length: 432px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(34) {
+  --angle: 237.6deg;
+  --hue: 237.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(34) {
+  --length: 453.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(35) {
+  --angle: 244.8deg;
+  --hue: 244.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(35) {
+  --length: 475.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(36) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(36) {
+  --length: 496.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(37) {
+  --angle: 259.2deg;
+  --hue: 259.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(37) {
+  --length: 518.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(38) {
+  --angle: 266.4deg;
+  --hue: 266.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(38) {
+  --length: 540px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(39) {
+  --angle: 273.6deg;
+  --hue: 273.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(39) {
+  --length: 561.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(40) {
+  --angle: 280.8deg;
+  --hue: 280.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(40) {
+  --length: 583.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(41) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(41) {
+  --length: 604.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(42) {
+  --angle: 295.2deg;
+  --hue: 295.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(42) {
+  --length: 626.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(43) {
+  --angle: 302.4deg;
+  --hue: 302.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(43) {
+  --length: 648px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(44) {
+  --angle: 309.6deg;
+  --hue: 309.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(44) {
+  --length: 669.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(45) {
+  --angle: 316.8deg;
+  --hue: 316.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(45) {
+  --length: 691.2px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(46) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(46) {
+  --length: 712.8px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(47) {
+  --angle: 331.2deg;
+  --hue: 331.2;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(47) {
+  --length: 734.4px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(48) {
+  --angle: 338.4deg;
+  --hue: 338.4;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(48) {
+  --length: 756px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(49) {
+  --angle: 345.6deg;
+  --hue: 345.6;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(49) {
+  --length: 777.6px;
+}
+
+body #wrapAll #wrapCenter #board .square25:nth-of-type(50) {
+  --angle: 352.8deg;
+  --hue: 352.8;
+}
+
+body #wrapAll #wrapCenter #board .row25:nth-of-type(50) {
+  --length: 799.2px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(1) {
+  --length: -261px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(2) {
+  --angle: 6deg;
+  --hue: 6;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(2) {
+  --length: -243px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(3) {
+  --angle: 12deg;
+  --hue: 12;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(3) {
+  --length: -225px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(4) {
+  --angle: 18deg;
+  --hue: 18;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(4) {
+  --length: -207px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(5) {
+  --angle: 24deg;
+  --hue: 24;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(5) {
+  --length: -189px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(6) {
+  --angle: 30deg;
+  --hue: 30;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(6) {
+  --length: -171px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(7) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(7) {
+  --length: -153px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(8) {
+  --angle: 42deg;
+  --hue: 42;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(8) {
+  --length: -135px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(9) {
+  --angle: 48deg;
+  --hue: 48;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(9) {
+  --length: -117px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(10) {
+  --angle: 54deg;
+  --hue: 54;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(10) {
+  --length: -99px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(11) {
+  --angle: 60deg;
+  --hue: 60;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(11) {
+  --length: -81px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(12) {
+  --angle: 66deg;
+  --hue: 66;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(12) {
+  --length: -63px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(13) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(13) {
+  --length: -45px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(14) {
+  --angle: 78deg;
+  --hue: 78;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(14) {
+  --length: -27px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(15) {
+  --angle: 84deg;
+  --hue: 84;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(15) {
+  --length: -9px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(16) {
+  --angle: 90deg;
+  --hue: 90;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(16) {
+  --length: 9px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(17) {
+  --angle: 96deg;
+  --hue: 96;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(17) {
+  --length: 27px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(18) {
+  --angle: 102deg;
+  --hue: 102;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(18) {
+  --length: 45px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(19) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(19) {
+  --length: 63px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(20) {
+  --angle: 114deg;
+  --hue: 114;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(20) {
+  --length: 81px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(21) {
+  --angle: 120deg;
+  --hue: 120;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(21) {
+  --length: 99px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(22) {
+  --angle: 126deg;
+  --hue: 126;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(22) {
+  --length: 117px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(23) {
+  --angle: 132deg;
+  --hue: 132;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(23) {
+  --length: 135px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(24) {
+  --angle: 138deg;
+  --hue: 138;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(24) {
+  --length: 153px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(25) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(25) {
+  --length: 171px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(26) {
+  --angle: 150deg;
+  --hue: 150;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(26) {
+  --length: 189px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(27) {
+  --angle: 156deg;
+  --hue: 156;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(27) {
+  --length: 207px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(28) {
+  --angle: 162deg;
+  --hue: 162;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(28) {
+  --length: 225px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(29) {
+  --angle: 168deg;
+  --hue: 168;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(29) {
+  --length: 243px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(30) {
+  --angle: 174deg;
+  --hue: 174;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(30) {
+  --length: 261px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(31) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(31) {
+  --length: 279px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(32) {
+  --angle: 186deg;
+  --hue: 186;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(32) {
+  --length: 297px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(33) {
+  --angle: 192deg;
+  --hue: 192;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(33) {
+  --length: 315px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(34) {
+  --angle: 198deg;
+  --hue: 198;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(34) {
+  --length: 333px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(35) {
+  --angle: 204deg;
+  --hue: 204;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(35) {
+  --length: 351px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(36) {
+  --angle: 210deg;
+  --hue: 210;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(36) {
+  --length: 369px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(37) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(37) {
+  --length: 387px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(38) {
+  --angle: 222deg;
+  --hue: 222;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(38) {
+  --length: 405px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(39) {
+  --angle: 228deg;
+  --hue: 228;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(39) {
+  --length: 423px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(40) {
+  --angle: 234deg;
+  --hue: 234;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(40) {
+  --length: 441px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(41) {
+  --angle: 240deg;
+  --hue: 240;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(41) {
+  --length: 459px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(42) {
+  --angle: 246deg;
+  --hue: 246;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(42) {
+  --length: 477px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(43) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(43) {
+  --length: 495px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(44) {
+  --angle: 258deg;
+  --hue: 258;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(44) {
+  --length: 513px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(45) {
+  --angle: 264deg;
+  --hue: 264;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(45) {
+  --length: 531px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(46) {
+  --angle: 270deg;
+  --hue: 270;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(46) {
+  --length: 549px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(47) {
+  --angle: 276deg;
+  --hue: 276;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(47) {
+  --length: 567px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(48) {
+  --angle: 282deg;
+  --hue: 282;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(48) {
+  --length: 585px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(49) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(49) {
+  --length: 603px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(50) {
+  --angle: 294deg;
+  --hue: 294;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(50) {
+  --length: 621px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(51) {
+  --angle: 300deg;
+  --hue: 300;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(51) {
+  --length: 639px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(52) {
+  --angle: 306deg;
+  --hue: 306;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(52) {
+  --length: 657px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(53) {
+  --angle: 312deg;
+  --hue: 312;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(53) {
+  --length: 675px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(54) {
+  --angle: 318deg;
+  --hue: 318;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(54) {
+  --length: 693px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(55) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(55) {
+  --length: 711px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(56) {
+  --angle: 330deg;
+  --hue: 330;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(56) {
+  --length: 729px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(57) {
+  --angle: 336deg;
+  --hue: 336;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(57) {
+  --length: 747px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(58) {
+  --angle: 342deg;
+  --hue: 342;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(58) {
+  --length: 765px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(59) {
+  --angle: 348deg;
+  --hue: 348;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(59) {
+  --length: 783px;
+}
+
+body #wrapAll #wrapCenter #board .square30:nth-of-type(60) {
+  --angle: 354deg;
+  --hue: 354;
+}
+
+body #wrapAll #wrapCenter #board .row30:nth-of-type(60) {
+  --length: 801px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(1) {
+  --length: -262.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(2) {
+  --angle: 5.14286deg;
+  --hue: 5.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(2) {
+  --length: -246.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(3) {
+  --angle: 10.28571deg;
+  --hue: 10.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(3) {
+  --length: -231.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(4) {
+  --angle: 15.42857deg;
+  --hue: 15.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(4) {
+  --length: -216px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(5) {
+  --angle: 20.57143deg;
+  --hue: 20.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(5) {
+  --length: -200.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(6) {
+  --angle: 25.71429deg;
+  --hue: 25.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(6) {
+  --length: -185.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(7) {
+  --angle: 30.85714deg;
+  --hue: 30.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(7) {
+  --length: -169.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(8) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(8) {
+  --length: -154.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(9) {
+  --angle: 41.14286deg;
+  --hue: 41.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(9) {
+  --length: -138.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(10) {
+  --angle: 46.28571deg;
+  --hue: 46.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(10) {
+  --length: -123.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(11) {
+  --angle: 51.42857deg;
+  --hue: 51.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(11) {
+  --length: -108px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(12) {
+  --angle: 56.57143deg;
+  --hue: 56.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(12) {
+  --length: -92.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(13) {
+  --angle: 61.71429deg;
+  --hue: 61.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(13) {
+  --length: -77.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(14) {
+  --angle: 66.85714deg;
+  --hue: 66.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(14) {
+  --length: -61.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(15) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(15) {
+  --length: -46.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(16) {
+  --angle: 77.14286deg;
+  --hue: 77.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(16) {
+  --length: -30.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(17) {
+  --angle: 82.28571deg;
+  --hue: 82.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(17) {
+  --length: -15.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(18) {
+  --angle: 87.42857deg;
+  --hue: 87.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(18) {
+  --length: 0px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(19) {
+  --angle: 92.57143deg;
+  --hue: 92.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(19) {
+  --length: 15.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(20) {
+  --angle: 97.71429deg;
+  --hue: 97.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(20) {
+  --length: 30.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(21) {
+  --angle: 102.85714deg;
+  --hue: 102.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(21) {
+  --length: 46.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(22) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(22) {
+  --length: 61.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(23) {
+  --angle: 113.14286deg;
+  --hue: 113.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(23) {
+  --length: 77.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(24) {
+  --angle: 118.28571deg;
+  --hue: 118.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(24) {
+  --length: 92.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(25) {
+  --angle: 123.42857deg;
+  --hue: 123.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(25) {
+  --length: 108px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(26) {
+  --angle: 128.57143deg;
+  --hue: 128.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(26) {
+  --length: 123.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(27) {
+  --angle: 133.71429deg;
+  --hue: 133.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(27) {
+  --length: 138.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(28) {
+  --angle: 138.85714deg;
+  --hue: 138.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(28) {
+  --length: 154.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(29) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(29) {
+  --length: 169.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(30) {
+  --angle: 149.14286deg;
+  --hue: 149.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(30) {
+  --length: 185.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(31) {
+  --angle: 154.28571deg;
+  --hue: 154.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(31) {
+  --length: 200.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(32) {
+  --angle: 159.42857deg;
+  --hue: 159.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(32) {
+  --length: 216px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(33) {
+  --angle: 164.57143deg;
+  --hue: 164.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(33) {
+  --length: 231.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(34) {
+  --angle: 169.71429deg;
+  --hue: 169.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(34) {
+  --length: 246.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(35) {
+  --angle: 174.85714deg;
+  --hue: 174.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(35) {
+  --length: 262.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(36) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(36) {
+  --length: 277.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(37) {
+  --angle: 185.14286deg;
+  --hue: 185.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(37) {
+  --length: 293.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(38) {
+  --angle: 190.28571deg;
+  --hue: 190.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(38) {
+  --length: 308.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(39) {
+  --angle: 195.42857deg;
+  --hue: 195.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(39) {
+  --length: 324px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(40) {
+  --angle: 200.57143deg;
+  --hue: 200.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(40) {
+  --length: 339.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(41) {
+  --angle: 205.71429deg;
+  --hue: 205.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(41) {
+  --length: 354.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(42) {
+  --angle: 210.85714deg;
+  --hue: 210.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(42) {
+  --length: 370.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(43) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(43) {
+  --length: 385.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(44) {
+  --angle: 221.14286deg;
+  --hue: 221.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(44) {
+  --length: 401.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(45) {
+  --angle: 226.28571deg;
+  --hue: 226.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(45) {
+  --length: 416.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(46) {
+  --angle: 231.42857deg;
+  --hue: 231.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(46) {
+  --length: 432px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(47) {
+  --angle: 236.57143deg;
+  --hue: 236.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(47) {
+  --length: 447.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(48) {
+  --angle: 241.71429deg;
+  --hue: 241.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(48) {
+  --length: 462.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(49) {
+  --angle: 246.85714deg;
+  --hue: 246.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(49) {
+  --length: 478.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(50) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(50) {
+  --length: 493.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(51) {
+  --angle: 257.14286deg;
+  --hue: 257.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(51) {
+  --length: 509.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(52) {
+  --angle: 262.28571deg;
+  --hue: 262.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(52) {
+  --length: 524.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(53) {
+  --angle: 267.42857deg;
+  --hue: 267.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(53) {
+  --length: 540px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(54) {
+  --angle: 272.57143deg;
+  --hue: 272.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(54) {
+  --length: 555.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(55) {
+  --angle: 277.71429deg;
+  --hue: 277.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(55) {
+  --length: 570.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(56) {
+  --angle: 282.85714deg;
+  --hue: 282.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(56) {
+  --length: 586.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(57) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(57) {
+  --length: 601.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(58) {
+  --angle: 293.14286deg;
+  --hue: 293.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(58) {
+  --length: 617.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(59) {
+  --angle: 298.28571deg;
+  --hue: 298.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(59) {
+  --length: 632.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(60) {
+  --angle: 303.42857deg;
+  --hue: 303.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(60) {
+  --length: 648px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(61) {
+  --angle: 308.57143deg;
+  --hue: 308.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(61) {
+  --length: 663.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(62) {
+  --angle: 313.71429deg;
+  --hue: 313.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(62) {
+  --length: 678.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(63) {
+  --angle: 318.85714deg;
+  --hue: 318.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(63) {
+  --length: 694.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(64) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(64) {
+  --length: 709.71429px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(65) {
+  --angle: 329.14286deg;
+  --hue: 329.14286;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(65) {
+  --length: 725.14286px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(66) {
+  --angle: 334.28571deg;
+  --hue: 334.28571;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(66) {
+  --length: 740.57143px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(67) {
+  --angle: 339.42857deg;
+  --hue: 339.42857;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(67) {
+  --length: 756px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(68) {
+  --angle: 344.57143deg;
+  --hue: 344.57143;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(68) {
+  --length: 771.42857px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(69) {
+  --angle: 349.71429deg;
+  --hue: 349.71429;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(69) {
+  --length: 786.85714px;
+}
+
+body #wrapAll #wrapCenter #board .square35:nth-of-type(70) {
+  --angle: 354.85714deg;
+  --hue: 354.85714;
+}
+
+body #wrapAll #wrapCenter #board .row35:nth-of-type(70) {
+  --length: 802.28571px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(1) {
+  --length: -263.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(2) {
+  --angle: 4.5deg;
+  --hue: 4.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(2) {
+  --length: -249.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(3) {
+  --angle: 9deg;
+  --hue: 9;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(3) {
+  --length: -236.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(4) {
+  --angle: 13.5deg;
+  --hue: 13.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(4) {
+  --length: -222.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(5) {
+  --angle: 18deg;
+  --hue: 18;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(5) {
+  --length: -209.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(6) {
+  --angle: 22.5deg;
+  --hue: 22.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(6) {
+  --length: -195.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(7) {
+  --angle: 27deg;
+  --hue: 27;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(7) {
+  --length: -182.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(8) {
+  --angle: 31.5deg;
+  --hue: 31.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(8) {
+  --length: -168.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(9) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(9) {
+  --length: -155.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(10) {
+  --angle: 40.5deg;
+  --hue: 40.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(10) {
+  --length: -141.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(11) {
+  --angle: 45deg;
+  --hue: 45;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(11) {
+  --length: -128.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(12) {
+  --angle: 49.5deg;
+  --hue: 49.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(12) {
+  --length: -114.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(13) {
+  --angle: 54deg;
+  --hue: 54;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(13) {
+  --length: -101.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(14) {
+  --angle: 58.5deg;
+  --hue: 58.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(14) {
+  --length: -87.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(15) {
+  --angle: 63deg;
+  --hue: 63;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(15) {
+  --length: -74.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(16) {
+  --angle: 67.5deg;
+  --hue: 67.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(16) {
+  --length: -60.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(17) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(17) {
+  --length: -47.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(18) {
+  --angle: 76.5deg;
+  --hue: 76.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(18) {
+  --length: -33.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(19) {
+  --angle: 81deg;
+  --hue: 81;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(19) {
+  --length: -20.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(20) {
+  --angle: 85.5deg;
+  --hue: 85.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(20) {
+  --length: -6.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(21) {
+  --angle: 90deg;
+  --hue: 90;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(21) {
+  --length: 6.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(22) {
+  --angle: 94.5deg;
+  --hue: 94.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(22) {
+  --length: 20.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(23) {
+  --angle: 99deg;
+  --hue: 99;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(23) {
+  --length: 33.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(24) {
+  --angle: 103.5deg;
+  --hue: 103.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(24) {
+  --length: 47.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(25) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(25) {
+  --length: 60.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(26) {
+  --angle: 112.5deg;
+  --hue: 112.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(26) {
+  --length: 74.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(27) {
+  --angle: 117deg;
+  --hue: 117;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(27) {
+  --length: 87.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(28) {
+  --angle: 121.5deg;
+  --hue: 121.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(28) {
+  --length: 101.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(29) {
+  --angle: 126deg;
+  --hue: 126;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(29) {
+  --length: 114.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(30) {
+  --angle: 130.5deg;
+  --hue: 130.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(30) {
+  --length: 128.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(31) {
+  --angle: 135deg;
+  --hue: 135;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(31) {
+  --length: 141.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(32) {
+  --angle: 139.5deg;
+  --hue: 139.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(32) {
+  --length: 155.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(33) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(33) {
+  --length: 168.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(34) {
+  --angle: 148.5deg;
+  --hue: 148.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(34) {
+  --length: 182.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(35) {
+  --angle: 153deg;
+  --hue: 153;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(35) {
+  --length: 195.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(36) {
+  --angle: 157.5deg;
+  --hue: 157.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(36) {
+  --length: 209.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(37) {
+  --angle: 162deg;
+  --hue: 162;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(37) {
+  --length: 222.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(38) {
+  --angle: 166.5deg;
+  --hue: 166.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(38) {
+  --length: 236.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(39) {
+  --angle: 171deg;
+  --hue: 171;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(39) {
+  --length: 249.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(40) {
+  --angle: 175.5deg;
+  --hue: 175.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(40) {
+  --length: 263.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(41) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(41) {
+  --length: 276.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(42) {
+  --angle: 184.5deg;
+  --hue: 184.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(42) {
+  --length: 290.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(43) {
+  --angle: 189deg;
+  --hue: 189;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(43) {
+  --length: 303.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(44) {
+  --angle: 193.5deg;
+  --hue: 193.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(44) {
+  --length: 317.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(45) {
+  --angle: 198deg;
+  --hue: 198;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(45) {
+  --length: 330.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(46) {
+  --angle: 202.5deg;
+  --hue: 202.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(46) {
+  --length: 344.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(47) {
+  --angle: 207deg;
+  --hue: 207;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(47) {
+  --length: 357.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(48) {
+  --angle: 211.5deg;
+  --hue: 211.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(48) {
+  --length: 371.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(49) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(49) {
+  --length: 384.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(50) {
+  --angle: 220.5deg;
+  --hue: 220.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(50) {
+  --length: 398.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(51) {
+  --angle: 225deg;
+  --hue: 225;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(51) {
+  --length: 411.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(52) {
+  --angle: 229.5deg;
+  --hue: 229.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(52) {
+  --length: 425.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(53) {
+  --angle: 234deg;
+  --hue: 234;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(53) {
+  --length: 438.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(54) {
+  --angle: 238.5deg;
+  --hue: 238.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(54) {
+  --length: 452.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(55) {
+  --angle: 243deg;
+  --hue: 243;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(55) {
+  --length: 465.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(56) {
+  --angle: 247.5deg;
+  --hue: 247.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(56) {
+  --length: 479.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(57) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(57) {
+  --length: 492.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(58) {
+  --angle: 256.5deg;
+  --hue: 256.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(58) {
+  --length: 506.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(59) {
+  --angle: 261deg;
+  --hue: 261;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(59) {
+  --length: 519.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(60) {
+  --angle: 265.5deg;
+  --hue: 265.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(60) {
+  --length: 533.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(61) {
+  --angle: 270deg;
+  --hue: 270;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(61) {
+  --length: 546.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(62) {
+  --angle: 274.5deg;
+  --hue: 274.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(62) {
+  --length: 560.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(63) {
+  --angle: 279deg;
+  --hue: 279;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(63) {
+  --length: 573.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(64) {
+  --angle: 283.5deg;
+  --hue: 283.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(64) {
+  --length: 587.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(65) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(65) {
+  --length: 600.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(66) {
+  --angle: 292.5deg;
+  --hue: 292.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(66) {
+  --length: 614.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(67) {
+  --angle: 297deg;
+  --hue: 297;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(67) {
+  --length: 627.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(68) {
+  --angle: 301.5deg;
+  --hue: 301.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(68) {
+  --length: 641.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(69) {
+  --angle: 306deg;
+  --hue: 306;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(69) {
+  --length: 654.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(70) {
+  --angle: 310.5deg;
+  --hue: 310.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(70) {
+  --length: 668.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(71) {
+  --angle: 315deg;
+  --hue: 315;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(71) {
+  --length: 681.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(72) {
+  --angle: 319.5deg;
+  --hue: 319.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(72) {
+  --length: 695.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(73) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(73) {
+  --length: 708.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(74) {
+  --angle: 328.5deg;
+  --hue: 328.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(74) {
+  --length: 722.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(75) {
+  --angle: 333deg;
+  --hue: 333;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(75) {
+  --length: 735.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(76) {
+  --angle: 337.5deg;
+  --hue: 337.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(76) {
+  --length: 749.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(77) {
+  --angle: 342deg;
+  --hue: 342;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(77) {
+  --length: 762.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(78) {
+  --angle: 346.5deg;
+  --hue: 346.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(78) {
+  --length: 776.25px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(79) {
+  --angle: 351deg;
+  --hue: 351;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(79) {
+  --length: 789.75px;
+}
+
+body #wrapAll #wrapCenter #board .square40:nth-of-type(80) {
+  --angle: 355.5deg;
+  --hue: 355.5;
+}
+
+body #wrapAll #wrapCenter #board .row40:nth-of-type(80) {
+  --length: 803.25px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(1) {
+  --angle: 0deg;
+  --hue: 0;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(1) {
+  --length: -264px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(2) {
+  --angle: 4deg;
+  --hue: 4;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(2) {
+  --length: -252px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(3) {
+  --angle: 8deg;
+  --hue: 8;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(3) {
+  --length: -240px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(4) {
+  --angle: 12deg;
+  --hue: 12;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(4) {
+  --length: -228px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(5) {
+  --angle: 16deg;
+  --hue: 16;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(5) {
+  --length: -216px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(6) {
+  --angle: 20deg;
+  --hue: 20;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(6) {
+  --length: -204px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(7) {
+  --angle: 24deg;
+  --hue: 24;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(7) {
+  --length: -192px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(8) {
+  --angle: 28deg;
+  --hue: 28;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(8) {
+  --length: -180px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(9) {
+  --angle: 32deg;
+  --hue: 32;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(9) {
+  --length: -168px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(10) {
+  --angle: 36deg;
+  --hue: 36;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(10) {
+  --length: -156px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(11) {
+  --angle: 40deg;
+  --hue: 40;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(11) {
+  --length: -144px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(12) {
+  --angle: 44deg;
+  --hue: 44;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(12) {
+  --length: -132px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(13) {
+  --angle: 48deg;
+  --hue: 48;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(13) {
+  --length: -120px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(14) {
+  --angle: 52deg;
+  --hue: 52;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(14) {
+  --length: -108px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(15) {
+  --angle: 56deg;
+  --hue: 56;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(15) {
+  --length: -96px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(16) {
+  --angle: 60deg;
+  --hue: 60;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(16) {
+  --length: -84px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(17) {
+  --angle: 64deg;
+  --hue: 64;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(17) {
+  --length: -72px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(18) {
+  --angle: 68deg;
+  --hue: 68;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(18) {
+  --length: -60px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(19) {
+  --angle: 72deg;
+  --hue: 72;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(19) {
+  --length: -48px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(20) {
+  --angle: 76deg;
+  --hue: 76;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(20) {
+  --length: -36px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(21) {
+  --angle: 80deg;
+  --hue: 80;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(21) {
+  --length: -24px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(22) {
+  --angle: 84deg;
+  --hue: 84;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(22) {
+  --length: -12px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(23) {
+  --angle: 88deg;
+  --hue: 88;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(23) {
+  --length: 0px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(24) {
+  --angle: 92deg;
+  --hue: 92;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(24) {
+  --length: 12px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(25) {
+  --angle: 96deg;
+  --hue: 96;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(25) {
+  --length: 24px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(26) {
+  --angle: 100deg;
+  --hue: 100;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(26) {
+  --length: 36px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(27) {
+  --angle: 104deg;
+  --hue: 104;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(27) {
+  --length: 48px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(28) {
+  --angle: 108deg;
+  --hue: 108;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(28) {
+  --length: 60px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(29) {
+  --angle: 112deg;
+  --hue: 112;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(29) {
+  --length: 72px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(30) {
+  --angle: 116deg;
+  --hue: 116;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(30) {
+  --length: 84px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(31) {
+  --angle: 120deg;
+  --hue: 120;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(31) {
+  --length: 96px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(32) {
+  --angle: 124deg;
+  --hue: 124;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(32) {
+  --length: 108px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(33) {
+  --angle: 128deg;
+  --hue: 128;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(33) {
+  --length: 120px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(34) {
+  --angle: 132deg;
+  --hue: 132;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(34) {
+  --length: 132px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(35) {
+  --angle: 136deg;
+  --hue: 136;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(35) {
+  --length: 144px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(36) {
+  --angle: 140deg;
+  --hue: 140;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(36) {
+  --length: 156px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(37) {
+  --angle: 144deg;
+  --hue: 144;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(37) {
+  --length: 168px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(38) {
+  --angle: 148deg;
+  --hue: 148;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(38) {
+  --length: 180px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(39) {
+  --angle: 152deg;
+  --hue: 152;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(39) {
+  --length: 192px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(40) {
+  --angle: 156deg;
+  --hue: 156;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(40) {
+  --length: 204px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(41) {
+  --angle: 160deg;
+  --hue: 160;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(41) {
+  --length: 216px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(42) {
+  --angle: 164deg;
+  --hue: 164;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(42) {
+  --length: 228px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(43) {
+  --angle: 168deg;
+  --hue: 168;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(43) {
+  --length: 240px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(44) {
+  --angle: 172deg;
+  --hue: 172;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(44) {
+  --length: 252px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(45) {
+  --angle: 176deg;
+  --hue: 176;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(45) {
+  --length: 264px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(46) {
+  --angle: 180deg;
+  --hue: 180;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(46) {
+  --length: 276px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(47) {
+  --angle: 184deg;
+  --hue: 184;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(47) {
+  --length: 288px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(48) {
+  --angle: 188deg;
+  --hue: 188;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(48) {
+  --length: 300px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(49) {
+  --angle: 192deg;
+  --hue: 192;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(49) {
+  --length: 312px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(50) {
+  --angle: 196deg;
+  --hue: 196;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(50) {
+  --length: 324px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(51) {
+  --angle: 200deg;
+  --hue: 200;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(51) {
+  --length: 336px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(52) {
+  --angle: 204deg;
+  --hue: 204;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(52) {
+  --length: 348px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(53) {
+  --angle: 208deg;
+  --hue: 208;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(53) {
+  --length: 360px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(54) {
+  --angle: 212deg;
+  --hue: 212;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(54) {
+  --length: 372px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(55) {
+  --angle: 216deg;
+  --hue: 216;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(55) {
+  --length: 384px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(56) {
+  --angle: 220deg;
+  --hue: 220;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(56) {
+  --length: 396px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(57) {
+  --angle: 224deg;
+  --hue: 224;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(57) {
+  --length: 408px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(58) {
+  --angle: 228deg;
+  --hue: 228;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(58) {
+  --length: 420px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(59) {
+  --angle: 232deg;
+  --hue: 232;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(59) {
+  --length: 432px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(60) {
+  --angle: 236deg;
+  --hue: 236;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(60) {
+  --length: 444px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(61) {
+  --angle: 240deg;
+  --hue: 240;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(61) {
+  --length: 456px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(62) {
+  --angle: 244deg;
+  --hue: 244;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(62) {
+  --length: 468px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(63) {
+  --angle: 248deg;
+  --hue: 248;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(63) {
+  --length: 480px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(64) {
+  --angle: 252deg;
+  --hue: 252;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(64) {
+  --length: 492px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(65) {
+  --angle: 256deg;
+  --hue: 256;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(65) {
+  --length: 504px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(66) {
+  --angle: 260deg;
+  --hue: 260;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(66) {
+  --length: 516px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(67) {
+  --angle: 264deg;
+  --hue: 264;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(67) {
+  --length: 528px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(68) {
+  --angle: 268deg;
+  --hue: 268;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(68) {
+  --length: 540px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(69) {
+  --angle: 272deg;
+  --hue: 272;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(69) {
+  --length: 552px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(70) {
+  --angle: 276deg;
+  --hue: 276;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(70) {
+  --length: 564px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(71) {
+  --angle: 280deg;
+  --hue: 280;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(71) {
+  --length: 576px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(72) {
+  --angle: 284deg;
+  --hue: 284;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(72) {
+  --length: 588px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(73) {
+  --angle: 288deg;
+  --hue: 288;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(73) {
+  --length: 600px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(74) {
+  --angle: 292deg;
+  --hue: 292;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(74) {
+  --length: 612px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(75) {
+  --angle: 296deg;
+  --hue: 296;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(75) {
+  --length: 624px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(76) {
+  --angle: 300deg;
+  --hue: 300;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(76) {
+  --length: 636px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(77) {
+  --angle: 304deg;
+  --hue: 304;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(77) {
+  --length: 648px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(78) {
+  --angle: 308deg;
+  --hue: 308;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(78) {
+  --length: 660px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(79) {
+  --angle: 312deg;
+  --hue: 312;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(79) {
+  --length: 672px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(80) {
+  --angle: 316deg;
+  --hue: 316;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(80) {
+  --length: 684px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(81) {
+  --angle: 320deg;
+  --hue: 320;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(81) {
+  --length: 696px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(82) {
+  --angle: 324deg;
+  --hue: 324;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(82) {
+  --length: 708px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(83) {
+  --angle: 328deg;
+  --hue: 328;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(83) {
+  --length: 720px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(84) {
+  --angle: 332deg;
+  --hue: 332;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(84) {
+  --length: 732px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(85) {
+  --angle: 336deg;
+  --hue: 336;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(85) {
+  --length: 744px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(86) {
+  --angle: 340deg;
+  --hue: 340;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(86) {
+  --length: 756px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(87) {
+  --angle: 344deg;
+  --hue: 344;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(87) {
+  --length: 768px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(88) {
+  --angle: 348deg;
+  --hue: 348;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(88) {
+  --length: 780px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(89) {
+  --angle: 352deg;
+  --hue: 352;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(89) {
+  --length: 792px;
+}
+
+body #wrapAll #wrapCenter #board .square45:nth-of-type(90) {
+  --angle: 356deg;
+  --hue: 356;
+}
+
+body #wrapAll #wrapCenter #board .row45:nth-of-type(90) {
+  --length: 804px;
+}
+
+body #wrapAll #wrapCenter #board .row {
+  transform-style: preserve-3d;
+  transform: translateY(var(--length));
+}
+
+body #wrapAll #wrapCenter #board .row .square {
+  text-align: center;
+  transform-style: preserve-3d;
+  position: absolute;
+  background-color: #4a4aa3dd;
+  border: solid 1px #ffffff55;
+  transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(170px);
+}
+
+body #wrapAll #wrapCenter #board .row .open {
+  background-color: #4a96a3fa;
+  color: #2d35a8;
+}
+
+body #wrapAll #wrapCenter #board .row .flag::before {
+  content: "\f024";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 50%;
+  left: 50%;
+  bottom: none;
+  right: none;
+  transform: translate(-50%, -50%);
+  font-size: 0.7em;
+  color: #ebeb45;
+}
+
+body #wrapAll #wrapCenter #board .row .explodeMine {
+  background-color: #a34a4add;
+}
+
+body #wrapAll #wrapCenter .fa-info-circle {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.8rem;
+  color: #ffffffdd;
+}
+
+body #wrapAll #wrapCenter .fa-info-circle:hover {
+  color: #ffffffaa;
+}
+
+body #wrapAll #wrapCenter #infoModal {
+  display: none;
+  position: absolute;
+  top: 3.6rem;
+  left: -20rem;
+  width: 79rem;
+  height: 53rem;
+  background-color: #55a;
+  border-radius: 1rem;
+  z-index: 10;
+  box-shadow: 0 10px 20px #00000050;
+}
+
+body #wrapAll #wrapCenter #infoModal p {
+  color: #ffffffdd;
+  width: max-content;
+  letter-spacing: 0.1rem;
+}
+
+body #wrapAll #wrapCenter #infoModal #infoTitle {
+  font-size: 2rem;
+  margin: 2.4rem 0 1.6rem 2.4rem;
+}
+
+body #wrapAll #wrapCenter #infoModal ul {
+  width: 72rem;
+  margin: 0 0 2.4rem 4.8rem;
+}
+
+body #wrapAll #wrapCenter #infoModal ul li {
+  list-style: circle;
+  color: #ffffffdd;
+  font-size: 1.4rem;
+  letter-spacing: 0.08rem;
+  line-height: 2.4rem;
+}
+
+body #wrapAll #wrapCenter #infoModal #infoSubTitle {
+  width: 100%;
+  border-top: solid 2px #ffffffdd;
+  padding: 2.4rem 0 0 2.4rem;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+}
+
+body #wrapAll #wrapCenter #leftArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapCenter #leftArrow:hover {
+  color: #ffffffaa;
+}
+
+body #wrapAll #wrapCenter #rightArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapCenter #rightArrow:hover {
+  color: #ffffffaa;
+}
+
+body #wrapAll #wrapCenter #wrapBtn {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+}
+
+body #wrapAll #wrapCenter #wrapBtn button {
+  display: block;
+  width: 4.8rem;
+  height: 4.8rem;
+  font-size: 2.4rem;
+  color: #ffffffaa;
+  box-shadow: 0 0 5px #ffffffdd;
+  margin-bottom: 1rem;
+}
+
+body #wrapAll #wrapCenter #wrapBtn button:hover {
+  background-color: #ffffff22;
+}
+
+body #wrapAll #wrapCenter #wrapBtn .changed {
+  background-color: #ffffffaa;
+  color: #005;
+}
+
+body #wrapAll #wrapCenter #wrapBtn .changed:hover {
+  background-color: #ffffff88;
+}
+
+body #wrapAll #wrapRight {
+  grid-area: wrapRight;
+  position: relative;
+}
+
+body #wrapAll #wrapRight #wrapLogin {
+  margin: 1rem 0 0 1rem;
+  width: 27rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+body #wrapAll #wrapRight #wrapLogin #loginBtn {
+  background-color: #ffffffdd;
+  padding: 5px;
+  width: max-content;
+  height: 3.2rem;
+  font-size: 1.3rem;
+  color: #005;
+  max-width: 14rem;
+  min-width: calc(8rem + 10px);
+  margin-right: 0.8rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body #wrapAll #wrapRight #wrapLogin #loginBtn::-webkit-scrollbar {
+  display: none;
+}
+
+body #wrapAll #wrapRight #wrapLogin #highestRank {
+  display: none;
+  width: max-content;
+  max-width: 13rem;
+  padding: 0 0.6rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #005;
+  background-color: #ffffffdd;
+  border-radius: 1px;
+  box-shadow: 0 2px 5px #00000050;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body #wrapAll #wrapRight #wrapLogin #highestRank::-webkit-scrollbar {
+  display: none;
+}
+
+body #wrapAll #wrapRight #loginModal {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  left: -3rem;
+  width: 35rem;
+  height: 24.6rem;
+  background-color: #55a;
+  border-radius: 1rem;
+  z-index: 10;
+  box-shadow: 0 10px 20px #00000050;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginInput {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  margin: 3.2rem auto 2.4rem auto;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginInput .fa-edit {
+  position: absolute;
+  top: 50%;
+  left: 1.8rem;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #55a;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginInput #inputLoginName {
+  width: 24rem;
+  height: 2.4rem;
+  margin: 0 auto;
+  border-radius: 1.4rem;
+  padding-inline-end: 3.6rem;
+  padding-inline-start: 3.6rem;
+  background-color: #ffffffdd;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginInput .submitBtn {
+  cursor: auto;
+  position: absolute;
+  top: 50%;
+  right: 1.8rem;
+  transform: translate(50%, -50%);
+  font-size: 1.4rem;
+  box-shadow: none;
+  color: #55a;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginBtn {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 3.2rem auto;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginBtn button {
+  width: 9rem;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 0.4rem;
+  position: relative;
+  background-color: #ffffffdd;
+  color: #55a;
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+body #wrapAll #wrapRight #loginModal #wrapLoginBtn button i {
+  position: absolute;
+  top: 0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body #wrapAll #wrapRight #loginModal ul {
+  border-top: solid 2px #ffffffdd;
+  margin: 0 auto;
+  padding-top: 1.6rem;
+}
+
+body #wrapAll #wrapRight #loginModal ul li {
+  margin-left: 4.8rem;
+  list-style: square;
+  color: #ffffffdd;
+  font-size: 1.2rem;
+}
+
+body #wrapAll #wrapRight #settingBtn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffffdd;
+}
+
+body #wrapAll #wrapRight #settingBtn .fa-cog {
+  font-size: 2rem;
+  color: #005;
+}
+
+body #wrapAll #wrapRight #settingModal {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  width: 35rem;
+  height: 58rem;
+  background-color: #55a;
+  border-radius: 1rem;
+  z-index: 10;
+  box-shadow: 0 10px 20px #00000050;
+}
+
+body #wrapAll #wrapRight #settingModal p {
+  color: #ffffffdd;
+  width: max-content;
+}
+
+body #wrapAll #wrapRight #settingModal #sensitivityTitle {
+  margin: 3.2rem auto 2.4rem auto;
+  font-size: 2rem;
+}
+
+body #wrapAll #wrapRight #settingModal #sensitivityBar {
+  display: block;
+  width: 27rem;
+  margin: 0 auto 3.2rem auto;
+  padding-inline-start: 1rem;
+  cursor: pointer;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics {
+  border-top: solid 2px #ffffffdd;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #statisticsTitle {
+  margin: 3.2rem auto 0 auto;
+  font-size: 2rem;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #wrapTotalBox {
+  width: 31rem;
+  margin: 1.6rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #wrapTotalBox .totalBox {
+  width: 15rem;
+  height: 9rem;
+  border: solid 1px #ffffffdd;
+  border-radius: 2.4rem;
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #wrapTotalBox .totalBox .totalTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.4rem 0;
+  border-bottom: solid 1px #ffffffdd;
+  background-color: #ffffffdd;
+  color: #55a;
+  font-weight: bold;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #wrapTotalBox .totalBox .totalNum {
+  font-size: 2.1rem;
+  line-height: calc(9rem - 3.06rem);
+  margin: 0 auto;
+  letter-spacing: 0.1rem;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #anchorStatistics {
+  background-color: #ffffffdd;
+  color: #55a;
+  width: 20rem;
+  height: 4.8rem;
+  margin: 2.4rem auto 1.6rem auto;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #anchorStatistics .fa-chart-bar {
+  color: #55a;
+  margin-right: 0.5rem;
+}
+
+body #wrapAll #wrapRight #settingModal #wrapStatistics #advice {
+  font-size: 0.8rem;
+  margin: 0 auto;
+  margin-bottom: 3.2rem;
+}
+
+body #wrapAll #wrapRight .fa-eye-slash {
+  position: absolute;
+  top: 52.6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff22;
+  font-size: 5rem;
+  display: none;
+  width: 35rem;
+  height: 63.5rem;
+  text-align: center;
+  line-height: 63.5rem;
+  cursor: pointer;
+}
+
+body #wrapAll #wrapRight .fa-eye-slash:hover {
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList {
+  background-color: #ffffff22;
+  margin-top: 3.2rem;
+  border-radius: 1px;
+  position: relative;
+}
+
+body #wrapAll #wrapRight #rankingList .fa-eye {
+  position: absolute;
+  top: 1rem;
+  left: 31.5rem;
+  color: #ffffffdd;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body #wrapAll #wrapRight #rankingList .fa-eye:hover {
+  color: #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingBtn {
+  margin-left: 1rem;
+  width: 29rem;
+  border-bottom: solid 2px #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingBtn #wrapRankingDegreeOfDifficultyBtn {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingBtn #wrapRankingDegreeOfDifficultyBtn .rankingDegreeOfDifficultyBtn {
+  width: 9rem;
+  height: 3rem;
+  background-color: #ffffffaa;
+  color: #005;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingBtn #wrapRankingScaleBtn {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingBtn #wrapRankingScaleBtn .rankingScaleBtn {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffffaa;
+  color: #005;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader {
+  width: 334px;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr {
+  height: 40px;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th {
+  position: relative;
+  font-size: 1.44rem;
+  color: #ffffffdd;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(1) {
+  width: 60px;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(1)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.5px;
+  width: 40px;
+  background-color: #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(2) {
+  width: 170px;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.5px;
+  width: 90px;
+  background-color: #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(3) {
+  width: 100px;
+}
+
+body #wrapAll #wrapRight #rankingList #tableHeader tr th:nth-of-type(3)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.5px;
+  width: 50px;
+  background-color: #ffffff55;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable {
+  width: 350px;
+  height: 480px;
+  cursor: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable::-webkit-scrollbar {
+  width: 16px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable::-webkit-scrollbar-track {
+  background-color: #ffffff22;
+  border-radius: 100px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable::-webkit-scrollbar-thumb {
+  background: #ffffff55;
+  box-shadow: inset 2px 2px 5px 0 #ffffff55;
+  border-radius: 100px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable {
+  display: none;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr {
+  height: 40px;
+  scroll-snap-align: start;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr:hover {
+  background-color: #ffffff11;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr td {
+  position: relative;
+  font-size: 1.44rem;
+  letter-spacing: 0.1rem;
+  color: #ffffffdd;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr td:nth-of-type(1) {
+  width: 60px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr td:nth-of-type(2) {
+  width: 170px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr td:nth-of-type(3) {
+  width: 100px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .rankingTable tr td:nth-of-type(-n + 2)::after {
+  content: "";
+  position: absolute;
+  background-color: #ffffff55;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 0.1px;
+  height: 10px;
+}
+
+body #wrapAll #wrapRight #rankingList #wrapRankingTable .displayRankingTable {
+  display: table;
+}
+
+body .selectedBtn {
+  background-color: #ffffff55 !important;
+}
+
+body button {
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px #00000050;
+  border: none;
+  background-color: transparent;
+}
+
+body input {
+  border: none;
+  outline: none;
+}
+
+body input:focus::placeholder {
+  color: transparent;
+}
+
+@keyframes blink {
+  to {
+    color: transparent;
+  }
+}
+
+body #start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(30deg, #500000 15%, #000050 50%);
+  background-size: 200% 200%;
+  opacity: 0.98;
+  z-index: 1;
+}
+
+body #start #startBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body #start #startBlock .startP {
+  width: max-content;
+  margin: 0 auto;
+  letter-spacing: 0.8rem;
+  color: #ffffffcc;
+}
+
+body #start #startBlock .startP:first-child {
+  font-size: 11.2rem;
+}
+
+body #start #startBlock .startP:nth-of-type(2) {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  opacity: 0.5;
+  animation: blink 2s ease-in infinite;
+}
+
+body #gameEnd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #500000;
+  opacity: 0.98;
+  text-align: center;
+  display: none;
+}
+
+body #gameEnd #endBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body #gameEnd #endBlock .endP {
+  color: #f00;
+  font-size: 9.6rem;
+  letter-spacing: 0.2rem;
+}
+
+body #gameEnd #endBlock .endP:nth-of-type(2) {
+  font-size: 4rem;
+  color: #ffffffcc;
+  opacity: 0.5;
+  animation: blink 1s ease-in infinite;
+}
+
+body #gameClear {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000050;
+  opacity: 0.98;
+  display: none;
+  text-align: center;
+}
+
+body #gameClear #clearBlock {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body #gameClear #clearBlock .clearP {
+  font-size: 9.6rem;
+  letter-spacing: 0.2rem;
+  color: #00f;
+}
+
+body #gameClear #clearBlock .clearP:nth-of-type(2) {
+  font-size: 4rem;
+  color: #ffffffcc;
+  opacity: 0.5;
+  transform: translateY(32rem);
+}
+
+body #gameClear #rankingModal {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 250px;
+  background-color: #55a;
+  color: #ffffffaa;
+  font-size: 1.92rem;
+  letter-spacing: 0.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px #00000050;
+}
+
+body #gameClear #rankingModal p {
+  text-align: left;
+  margin-left: 4.8rem;
+}
+
+body #gameClear #rankingModal p:first-child {
+  margin-top: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+body #gameClear #rankingModal p span {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+body #gameClear #rankingModal form {
+  position: relative;
+}
+
+body #gameClear #rankingModal form .fa-edit {
+  position: absolute;
+  top: 50%;
+  left: 7rem;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #55a;
+}
+
+body #gameClear #rankingModal form input {
+  width: 24rem;
+  height: 2.4rem;
+  margin: 2.4rem auto;
+  border-radius: 1.4rem;
+  padding-inline-end: 3.6rem;
+  padding-inline-start: 3.6rem;
+  background-color: #ffffffdd;
+}
+
+body #gameClear #rankingModal form #registerBtn {
+  width: 4.8rem;
+  height: 2.4rem;
+  background-color: #ffffffdd;
+  color: #55a;
+  font-weight: bold;
+}
+
+body #gameClear #rankingModal ul {
+  border-top: solid 2px #ffffffdd;
+  margin: 0 auto;
+  padding-top: 1.6rem;
+  text-align: left;
+}
+
+body #gameClear #rankingModal ul li {
+  margin-left: 4.8rem;
+  list-style: square;
+  color: #ffffffdd;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100) !important;
+  }
+  .startP:first-child {
+    font-size: 4.5rem !important;
+  }
+  .endP:first-child,
+  .clearP:first-child {
+    font-size: 3.6rem !important;
+    white-space: nowrap;
+  }
+  .startP:last-child,
+  .clearP:last-child,
+  .endP:last-child {
+    display: none;
+  }
+  #clearBlock {
+    top: 50% !important;
+  }
+  #rankingModal {
+    display: none;
+  }
+  #wrapLeft,
+  #wrapRight {
+    display: none !important;
+  }
+  #wrapAll {
+    grid-template-rows: 7rem calc(1fr - 3rem) !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    height: calc(var(--vh, 1vh) * 100 - 3vh) !important;
+  }
+  #wrapTop {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: none !important;
+  }
+  #wrapTop div {
+    height: 6rem !important;
+    font-size: 2.5rem !important;
+    width: 30vw;
+  }
+  #wrapTop #sizeBox {
+    display: none !important;
+  }
+  #wrapTop #elapsedTimeBox {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  #wrapTop #elapsedTimeBox::-webkit-scrollbar {
+    display: none;
+  }
+  .row:nth-of-type(1) {
+    --lengthSp: -190px;
+  }
+  .row:nth-of-type(2) {
+    --lengthSp: -150px;
+  }
+  .row:nth-of-type(3) {
+    --lengthSp: -110px;
+  }
+  .row:nth-of-type(4) {
+    --lengthSp: -70px;
+  }
+  .row:nth-of-type(5) {
+    --lengthSp: -30px;
+  }
+  .row:nth-of-type(6) {
+    --lengthSp: 10px;
+  }
+  .row:nth-of-type(7) {
+    --lengthSp: 50px;
+  }
+  .row:nth-of-type(8) {
+    --lengthSp: 90px;
+  }
+  .row:nth-of-type(9) {
+    --lengthSp: 130px;
+  }
+  .row:nth-of-type(10) {
+    --lengthSp: 170px;
+  }
+  .row {
+    transform: translateY(var(--lengthSp)) !important;
+  }
+  .square {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.6rem !important;
+    line-height: 40px !important;
+    transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(125px) !important;
+  }
+  .fa-info-circle {
+    display: none !important;
+  }
+  #wrapBtn {
+    top: calc(100% - 4.8rem) !important;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  #wrapBtn button {
+    width: 30% !important;
+  }
+  #leftArrow {
+    top: 45% !important;
+    left: 6% !important;
+    font-size: 4rem !important;
+  }
+  #rightArrow {
+    top: 45% !important;
+    left: 94% !important;
+    font-size: 4rem !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */
