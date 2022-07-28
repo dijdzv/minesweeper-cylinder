@@ -1,0 +1,10 @@
+services:
+  php:
+    image: php:8.1.4-apache
+    container_name: minesweeper-cylinder
+    ports:
+      - 8080:80
+    volumes:
+      - type: bind # ソース
+        source: "./src"
+        target: /var/www/html
