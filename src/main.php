@@ -236,13 +236,13 @@ for ($i = 0; $i < $implement_scale * 3; $i++) {
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/declaration.js" defer></script>
-  <script src="js/function.js" defer></script>
-  <script src="js/login.js" defer></script>
-  <script src="js/ranking.js" defer></script>
-  <script src="js/info.js" defer></script>
-  <script src="js/setting.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main/declaration.js" defer></script>
+  <script src="js/main/function.js" defer></script>
+  <script src="js/main/login.js" defer></script>
+  <script src="js/main/ranking.js" defer></script>
+  <script src="js/main/info.js" defer></script>
+  <script src="js/main/setting.js" defer></script>
+  <script src="js/main/main.js" defer></script>
   <title>Minesweeper Cylinder</title>
 </head>
 
