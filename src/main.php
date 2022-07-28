@@ -472,10 +472,3 @@ for ($i = 0; $i < $implement_scale * 3; $i++) {
 </body>
 
 </html>
-
-<!--  todo
-更新するときは全部入れなおす
-
-localhost/sample/creation/minesweeper
-localhost/sample/creation/minesweeper/main.php
- -->

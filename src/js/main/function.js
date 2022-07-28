@@ -29,35 +29,39 @@ function squareSize(i) {
   square[i].style.lineHeight = `${540 / scaleVal}px`;
   square[i].style.borderWidth = `${10 / scaleVal}px`;
   if (i % (scaleVal * 2) === 0) {
-    square[i].style.width = `${545 / scaleVal}px`
-    square[i].style.height = `${545 / scaleVal}px`
+    square[i].style.width = `${545 / scaleVal}px`;
+    square[i].style.height = `${545 / scaleVal}px`;
   }
 }
 
 function flagCount() {
-  const flag = document.querySelectorAll('.flag');
-  const flagCount = document.getElementById('flagCount');
+  const flag = document.querySelectorAll(".flag");
+  const flagCount = document.getElementById("flagCount");
   flagCount.textContent = flag.length;
 }
 
 function displayRankingTable() {
-  const rankingTable = document.getElementsByClassName('rankingTable');
+  const rankingTable = document.getElementsByClassName("rankingTable");
 
-  if (document.querySelectorAll('.displayRankingTable')[0]) {
-    document.querySelectorAll('.displayRankingTable')[0].classList.remove('displayRankingTable');
+  if (document.querySelectorAll(".displayRankingTable")[0]) {
+    document
+      .querySelectorAll(".displayRankingTable")[0]
+      .classList.remove("displayRankingTable");
   }
-  rankingTable[degreeOfDifficultyI + scaleI * 3].classList.add('displayRankingTable');
+  rankingTable[degreeOfDifficultyI + scaleI * 3].classList.add(
+    "displayRankingTable"
+  );
 }
 
 function gameEnd() {
   gameEndAnimation().then(() => {
-    const gameEnd = document.getElementById('gameEnd');
-    gameEnd.style.display = 'block';
-    gameEnd.addEventListener('click', () => {
+    const gameEnd = document.getElementById("gameEnd");
+    gameEnd.style.display = "block";
+    gameEnd.addEventListener("click", () => {
       window.location.reload();
     });
-    document.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
+    document.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
         window.location.reload();
       }
     });
@@ -67,96 +71,148 @@ function gameEnd() {
 function gameEndAnimation() {
   return new Promise((resolve) => {
     const squareList = Array.from(square);
-    const index = squareList.findIndex((testList) => testList.classList.contains('explodeMine'));
+    const index = squareList.findIndex((testList) =>
+      testList.classList.contains("explodeMine")
+    );
     explodeSearch(index);
     let squareNum = scaleVal ** 2 * 2;
     let endTimer = window.setInterval(() => {
-      if (document.querySelectorAll('.explodeMine').length === squareNum) {
+      if (document.querySelectorAll(".explodeMine").length === squareNum) {
         window.clearInterval(endTimer);
         resolve();
       }
-    }, 200)
+    }, 200);
   });
 }
 
 function allExplode(i) {
-  square[i].classList.remove('flag');
-  square[i].classList.add('explodeMine');
-  square[i].textContent = '';
+  square[i].classList.remove("flag");
+  square[i].classList.add("explodeMine");
+  square[i].textContent = "";
   window.setTimeout(() => {
     explodeSearch(i);
-  }, 100)
+  }, 100);
 }
 
 async function explodeSearch(i) {
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== 0
-    && !square[i - (scaleVal * 2) - 1].classList.contains('explodeMine')) { //左上
-    allExplode(i - (scaleVal * 2) - 1);
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) !== 0 &&
+    !square[i - scaleVal * 2 - 1].classList.contains("explodeMine")
+  ) {
+    //左上
+    allExplode(i - scaleVal * 2 - 1);
   }
-  if (i / (scaleVal * 2) >= 1
-    && !square[i - (scaleVal * 2)].classList.contains('explodeMine')) { //上
-    allExplode(i - (scaleVal * 2));
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    !square[i - scaleVal * 2].classList.contains("explodeMine")
+  ) {
+    //上
+    allExplode(i - scaleVal * 2);
   }
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && !square[i - (scaleVal * 2) + 1].classList.contains('explodeMine')) { //右上
-    allExplode(i - (scaleVal * 2) + 1);
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    !square[i - scaleVal * 2 + 1].classList.contains("explodeMine")
+  ) {
+    //右上
+    allExplode(i - scaleVal * 2 + 1);
   }
-  if (i % (scaleVal * 2) !== 0
-    && !square[i - 1].classList.contains('explodeMine')) { //左
+  if (
+    i % (scaleVal * 2) !== 0 &&
+    !square[i - 1].classList.contains("explodeMine")
+  ) {
+    //左
     allExplode(i - 1);
   }
-  if (i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && !square[i + 1].classList.contains('explodeMine')) { //右
+  if (
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    !square[i + 1].classList.contains("explodeMine")
+  ) {
+    //右
     allExplode(i + 1);
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== 0
-    && !square[i + (scaleVal * 2) - 1].classList.contains('explodeMine')) { //左下
-    allExplode(i + (scaleVal * 2) - 1);
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) !== 0 &&
+    !square[i + scaleVal * 2 - 1].classList.contains("explodeMine")
+  ) {
+    //左下
+    allExplode(i + scaleVal * 2 - 1);
   }
-  if (i / (scaleVal * 2) < scaleVal - 1
-    && !square[i + (scaleVal * 2)].classList.contains('explodeMine')) { //下
-    allExplode(i + (scaleVal * 2));
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    !square[i + scaleVal * 2].classList.contains("explodeMine")
+  ) {
+    //下
+    allExplode(i + scaleVal * 2);
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && !square[i + (scaleVal * 2) + 1].classList.contains('explodeMine')) { //右下
-    allExplode(i + (scaleVal * 2) + 1);
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    !square[i + scaleVal * 2 + 1].classList.contains("explodeMine")
+  ) {
+    //右下
+    allExplode(i + scaleVal * 2 + 1);
   }
   //円柱
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === 0
-    && !square[i - 1].classList.contains('explodeMine')) { //左上(円柱)
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) === 0 &&
+    !square[i - 1].classList.contains("explodeMine")
+  ) {
+    //左上(円柱)
     allExplode(i - 1);
   }
-  if (i % (scaleVal * 2) === 0
-    && !square[i + (scaleVal * 2) - 1].classList.contains('explodeMine')) { //左(円柱)
-    allExplode(i + (scaleVal * 2) - 1);
+  if (
+    i % (scaleVal * 2) === 0 &&
+    !square[i + scaleVal * 2 - 1].classList.contains("explodeMine")
+  ) {
+    //左(円柱)
+    allExplode(i + scaleVal * 2 - 1);
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === 0
-    && !square[i + (scaleVal * 4) - 1].classList.contains('explodeMine')) { //左下(円柱)
-    allExplode(i + (scaleVal * 4) - 1);
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) === 0 &&
+    !square[i + scaleVal * 4 - 1].classList.contains("explodeMine")
+  ) {
+    //左下(円柱)
+    allExplode(i + scaleVal * 4 - 1);
   }
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && !square[i - (scaleVal * 4) + 1].classList.contains('explodeMine')) { //右上(円柱)
-    allExplode(i - (scaleVal * 4) + 1);
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    !square[i - scaleVal * 4 + 1].classList.contains("explodeMine")
+  ) {
+    //右上(円柱)
+    allExplode(i - scaleVal * 4 + 1);
   }
-  if (i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && !square[i - (scaleVal * 2) + 1].classList.contains('explodeMine')) { //右(円柱)
-    allExplode(i - (scaleVal * 2) + 1);
+  if (
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    !square[i - scaleVal * 2 + 1].classList.contains("explodeMine")
+  ) {
+    //右(円柱)
+    allExplode(i - scaleVal * 2 + 1);
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && !square[i + 1].classList.contains('explodeMine')) { //右下(円柱)
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    !square[i + 1].classList.contains("explodeMine")
+  ) {
+    //右下(円柱)
     allExplode(i + 1);
   }
 }
 
 function gameClear() {
-  const gameClear = document.getElementById('gameClear');
-  gameClear.style.display = 'block';
-  const time = document.getElementById('time');
+  const gameClear = document.getElementById("gameClear");
+  gameClear.style.display = "block";
+  const time = document.getElementById("time");
   time.textContent = elapsedTime;
-  const rankTime = document.getElementsByName('rankTime')[0];
+  const rankTime = document.getElementsByName("rankTime")[0];
   rankTime.value = elapsedTime;
   //順位
-  const rankObj = document.getElementById('rank');
+  const rankObj = document.getElementById("rank");
   for (let i = 0; i < jsonScoreList.length; i++) {
     if (jsonScoreList[i][2] > Number(elapsedTimeObj.textContent)) {
       var rank = i + 1;
@@ -166,32 +222,34 @@ function gameClear() {
       break;
     }
   }
-  if (typeof rank === 'undefined') {
+  if (typeof rank === "undefined") {
     var rank = jsonScoreList.length + 1;
   }
 
   rankObj.textContent = rank;
   //最高順位
-  if (sessionStorage.getItem('login_name')) {
-    if (sessionStorage.getItem('highest_rank') > rank) {
-      sessionStorage.setItem('highest_rank', rank);
-    } else if (!sessionStorage.getItem('highest_rank')) {
-      sessionStorage.setItem('highest_rank', rank);
+  if (sessionStorage.getItem("login_name")) {
+    if (sessionStorage.getItem("highest_rank") > rank) {
+      sessionStorage.setItem("highest_rank", rank);
+    } else if (!sessionStorage.getItem("highest_rank")) {
+      sessionStorage.setItem("highest_rank", rank);
     }
   }
   //ボタン制御
   if (rankName.value.length > 0) {
-    registerBtn.removeAttribute('disabled');
+    registerBtn.removeAttribute("disabled");
   }
   //素通り処理
-  const clearTime = document.getElementsByName('clearTime')[0];
+  const clearTime = document.getElementsByName("clearTime")[0];
   clearTime.value = elapsedTime;
-  const clearP = document.getElementsByClassName('clearP');
+  const clearP = document.getElementsByClassName("clearP");
   const url = document.URL;
-  gameClear.addEventListener('click', (e) => {
-    if (e.target === e.currentTarget
-      || e.target === clearP[0]
-      || e.target === clearP[1]) {
+  gameClear.addEventListener("click", (e) => {
+    if (
+      e.target === e.currentTarget ||
+      e.target === clearP[0] ||
+      e.target === clearP[1]
+    ) {
       if (url.match(/\?/)) {
         window.location.href = url + `&clearTime=${elapsedTime}`;
       } else {
@@ -202,162 +260,257 @@ function gameClear() {
 }
 
 function checkClear() {
-  if (document.querySelectorAll('.basis').length === 0) {
+  if (document.querySelectorAll(".basis").length === 0) {
     gameClear();
   }
 }
 
 function countMine(i) {
   let mineCount = 0;
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== 0
-    && square[i - (scaleVal * 2) - 1].classList.contains('mine')) { //左上
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) !== 0 &&
+    square[i - scaleVal * 2 - 1].classList.contains("mine")
+  ) {
+    //左上
     mineCount++;
   }
-  if (i / (scaleVal * 2) >= 1
-    && square[i - (scaleVal * 2)].classList.contains('mine')) { //上
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    square[i - scaleVal * 2].classList.contains("mine")
+  ) {
+    //上
     mineCount++;
   }
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && square[i - (scaleVal * 2) + 1].classList.contains('mine')) { //右上
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    square[i - scaleVal * 2 + 1].classList.contains("mine")
+  ) {
+    //右上
     mineCount++;
   }
-  if (i % (scaleVal * 2) !== 0
-    && square[i - 1].classList.contains('mine')) { //左
+  if (i % (scaleVal * 2) !== 0 && square[i - 1].classList.contains("mine")) {
+    //左
     mineCount++;
   }
-  if (i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && square[i + 1].classList.contains('mine')) { //右
+  if (
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    square[i + 1].classList.contains("mine")
+  ) {
+    //右
     mineCount++;
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== 0
-    && square[i + (scaleVal * 2) - 1].classList.contains('mine')) { //左下
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) !== 0 &&
+    square[i + scaleVal * 2 - 1].classList.contains("mine")
+  ) {
+    //左下
     mineCount++;
   }
-  if (i / (scaleVal * 2) < scaleVal - 1
-    && square[i + (scaleVal * 2)].classList.contains('mine')) { //下
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    square[i + scaleVal * 2].classList.contains("mine")
+  ) {
+    //下
     mineCount++;
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-    && square[i + (scaleVal * 2) + 1].classList.contains('mine')) { //右下
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+    square[i + scaleVal * 2 + 1].classList.contains("mine")
+  ) {
+    //右下
     mineCount++;
   }
   //円柱
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === 0
-    && square[i - 1].classList.contains('mine')) { //左上(円柱)
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) === 0 &&
+    square[i - 1].classList.contains("mine")
+  ) {
+    //左上(円柱)
     mineCount++;
   }
-  if (i % (scaleVal * 2) === 0
-    && square[i + (scaleVal * 2) - 1].classList.contains('mine')) { //左(円柱)
+  if (
+    i % (scaleVal * 2) === 0 &&
+    square[i + scaleVal * 2 - 1].classList.contains("mine")
+  ) {
+    //左(円柱)
     mineCount++;
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === 0
-    && square[i + (scaleVal * 4) - 1].classList.contains('mine')) { //左下(円柱)
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) === 0 &&
+    square[i + scaleVal * 4 - 1].classList.contains("mine")
+  ) {
+    //左下(円柱)
     mineCount++;
   }
-  if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && square[i - (scaleVal * 4) + 1].classList.contains('mine')) { //右上(円柱)
+  if (
+    i / (scaleVal * 2) >= 1 &&
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    square[i - scaleVal * 4 + 1].classList.contains("mine")
+  ) {
+    //右上(円柱)
     mineCount++;
   }
-  if (i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && square[i - (scaleVal * 2) + 1].classList.contains('mine')) { //右(円柱)
+  if (
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    square[i - scaleVal * 2 + 1].classList.contains("mine")
+  ) {
+    //右(円柱)
     mineCount++;
   }
-  if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-    && square[i + 1].classList.contains('mine')) { //右下(円柱)
+  if (
+    i / (scaleVal * 2) < scaleVal - 1 &&
+    i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+    square[i + 1].classList.contains("mine")
+  ) {
+    //右下(円柱)
     mineCount++;
   }
   //-------------------------------------------------------
   if (mineCount > 0) {
     square[i].textContent = mineCount;
   } else {
-    square[i].classList.add('mine0');
+    square[i].classList.add("mine0");
   }
 }
 
 function autoOpenSearch(i) {
-  if (square[i].classList.contains('mine0')) { //mineがないならまた探す
-    if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== 0
-      && !square[i - (scaleVal * 2) - 1].classList.contains('mine')) { //左上
-      autoOpen(i - (scaleVal * 2) - 1);
+  if (square[i].classList.contains("mine0")) {
+    //mineがないならまた探す
+    if (
+      i / (scaleVal * 2) >= 1 &&
+      i % (scaleVal * 2) !== 0 &&
+      !square[i - scaleVal * 2 - 1].classList.contains("mine")
+    ) {
+      //左上
+      autoOpen(i - scaleVal * 2 - 1);
     }
-    if (i / (scaleVal * 2) >= 1
-      && !square[i - (scaleVal * 2)].classList.contains('mine')) { //上
-      autoOpen(i - (scaleVal * 2));
+    if (
+      i / (scaleVal * 2) >= 1 &&
+      !square[i - scaleVal * 2].classList.contains("mine")
+    ) {
+      //上
+      autoOpen(i - scaleVal * 2);
     }
-    if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-      && !square[i - (scaleVal * 2) + 1].classList.contains('mine')) { //右上
-      autoOpen(i - (scaleVal * 2) + 1);
+    if (
+      i / (scaleVal * 2) >= 1 &&
+      i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+      !square[i - scaleVal * 2 + 1].classList.contains("mine")
+    ) {
+      //右上
+      autoOpen(i - scaleVal * 2 + 1);
     }
-    if (i % (scaleVal * 2) !== 0
-      && !square[i - 1].classList.contains('mine')) { //左
+    if (i % (scaleVal * 2) !== 0 && !square[i - 1].classList.contains("mine")) {
+      //左
       autoOpen(i - 1);
     }
-    if (i % (scaleVal * 2) !== (scaleVal * 2) - 1
-      && !square[i + 1].classList.contains('mine')) { //右
+    if (
+      i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+      !square[i + 1].classList.contains("mine")
+    ) {
+      //右
       autoOpen(i + 1);
     }
-    if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== 0
-      && !square[i + (scaleVal * 2) - 1].classList.contains('mine')) { //左下
-      autoOpen(i + (scaleVal * 2) - 1);
+    if (
+      i / (scaleVal * 2) < scaleVal - 1 &&
+      i % (scaleVal * 2) !== 0 &&
+      !square[i + scaleVal * 2 - 1].classList.contains("mine")
+    ) {
+      //左下
+      autoOpen(i + scaleVal * 2 - 1);
     }
-    if (i / (scaleVal * 2) < scaleVal - 1
-      && !square[i + (scaleVal * 2)].classList.contains('mine')) { //下
-      autoOpen(i + (scaleVal * 2));
+    if (
+      i / (scaleVal * 2) < scaleVal - 1 &&
+      !square[i + scaleVal * 2].classList.contains("mine")
+    ) {
+      //下
+      autoOpen(i + scaleVal * 2);
     }
-    if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) !== (scaleVal * 2) - 1
-      && !square[i + (scaleVal * 2) + 1].classList.contains('mine')) { //右下
-      autoOpen(i + (scaleVal * 2) + 1);
+    if (
+      i / (scaleVal * 2) < scaleVal - 1 &&
+      i % (scaleVal * 2) !== scaleVal * 2 - 1 &&
+      !square[i + scaleVal * 2 + 1].classList.contains("mine")
+    ) {
+      //右下
+      autoOpen(i + scaleVal * 2 + 1);
     }
     //円柱
-    if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === 0
-      && !square[i - 1].classList.contains('mine')) { //左上(円柱)
+    if (
+      i / (scaleVal * 2) >= 1 &&
+      i % (scaleVal * 2) === 0 &&
+      !square[i - 1].classList.contains("mine")
+    ) {
+      //左上(円柱)
       autoOpen(i - 1);
     }
-    if (i % (scaleVal * 2) === 0
-      && !square[i + (scaleVal * 2) - 1].classList.contains('mine')) { //左(円柱)
-      autoOpen(i + (scaleVal * 2) - 1);
+    if (
+      i % (scaleVal * 2) === 0 &&
+      !square[i + scaleVal * 2 - 1].classList.contains("mine")
+    ) {
+      //左(円柱)
+      autoOpen(i + scaleVal * 2 - 1);
     }
-    if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === 0
-      && !square[i + (scaleVal * 4) - 1].classList.contains('mine')) { //左下(円柱)
-      autoOpen(i + (scaleVal * 4) - 1);
+    if (
+      i / (scaleVal * 2) < scaleVal - 1 &&
+      i % (scaleVal * 2) === 0 &&
+      !square[i + scaleVal * 4 - 1].classList.contains("mine")
+    ) {
+      //左下(円柱)
+      autoOpen(i + scaleVal * 4 - 1);
     }
-    if (i / (scaleVal * 2) >= 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-      && !square[i - (scaleVal * 4) + 1].classList.contains('mine')) { //右上(円柱)
-      autoOpen(i - (scaleVal * 4) + 1);
+    if (
+      i / (scaleVal * 2) >= 1 &&
+      i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+      !square[i - scaleVal * 4 + 1].classList.contains("mine")
+    ) {
+      //右上(円柱)
+      autoOpen(i - scaleVal * 4 + 1);
     }
-    if (i % (scaleVal * 2) === (scaleVal * 2) - 1
-      && !square[i - (scaleVal * 2) + 1].classList.contains('mine')) { //右(円柱)
-      autoOpen(i - (scaleVal * 2) + 1);
+    if (
+      i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+      !square[i - scaleVal * 2 + 1].classList.contains("mine")
+    ) {
+      //右(円柱)
+      autoOpen(i - scaleVal * 2 + 1);
     }
-    if (i / (scaleVal * 2) < scaleVal - 1 && i % (scaleVal * 2) === (scaleVal * 2) - 1
-      && !square[i + 1].classList.contains('mine')) { //右下(円柱)
+    if (
+      i / (scaleVal * 2) < scaleVal - 1 &&
+      i % (scaleVal * 2) === scaleVal * 2 - 1 &&
+      !square[i + 1].classList.contains("mine")
+    ) {
+      //右下(円柱)
       autoOpen(i + 1);
     }
   }
 }
 
 function autoOpen(i) {
-  if (square[i].classList.contains('basis')) {
+  if (square[i].classList.contains("basis")) {
     window.setTimeout(() => {
-      square[i].classList.remove('basis');
-      square[i].classList.add('open');
+      square[i].classList.remove("basis");
+      square[i].classList.add("open");
       countMine(i);
       autoOpenSearch(i);
       checkClear();
-    }, 0)
+    }, 0);
   }
 }
 
 function btnOpen() {
-  const basisArray = document.querySelectorAll('.basis'); //basis配列
+  const basisArray = document.querySelectorAll(".basis"); //basis配列
   const randIndex = Math.floor(Math.random() * basisArray.length); //basisのランダムな添字
-  basisArray[randIndex].classList.remove('basis');
-  basisArray[randIndex].classList.add('open');
-  basisArray[randIndex].classList.add('randOpen');
+  basisArray[randIndex].classList.remove("basis");
+  basisArray[randIndex].classList.add("open");
+  basisArray[randIndex].classList.add("randOpen");
   for (let i = 0; i < square.length; i++) {
-    if (square[i].classList.contains('randOpen')) {
+    if (square[i].classList.contains("randOpen")) {
       countMine(i);
-      square[i].classList.remove('randOpen');
+      square[i].classList.remove("randOpen");
       autoOpenSearch(i);
     }
   }
@@ -365,10 +518,12 @@ function btnOpen() {
 }
 
 function timePassed() {
-  startObj.style.display = 'none';
+  startObj.style.display = "none";
   let timerId = window.setInterval(() => {
-    if (document.querySelectorAll('.basis').length === 0
-      || document.querySelectorAll('.explodeMine').length === 1) {
+    if (
+      document.querySelectorAll(".basis").length === 0 ||
+      document.querySelectorAll(".explodeMine").length === 1
+    ) {
       window.clearInterval(timerId);
       return;
     }
@@ -382,33 +537,31 @@ function timePassed() {
       m = Math.floor(toDate / 60) % 60;
       s = toDate % 60;
       if (d === 0) {
-        dd = '';
+        dd = "";
       } else {
-        dd = d + 'd';
+        dd = d + "d";
       }
       if (h === 0) {
-        hh = '';
+        hh = "";
       } else {
-        hh = h + 'h';
+        hh = h + "h";
       }
       if (m === 0) {
-        mm = '';
+        mm = "";
       } else {
-        mm = m + 'm';
+        mm = m + "m";
       }
-      ss = s + 's';
+      ss = s + "s";
       elapsedTimeObj.textContent = dd + hh + mm + ss;
     }
     elapsedTimeFontSize();
   }, 1000);
 }
 
-
 //login.js
 function checkForm(form) {
-  form.value = form.value.replace(/\s+/g, '');
-  if (form.value !== ''
-    && form.value.length < 11) {
+  form.value = form.value.replace(/\s+/g, "");
+  if (form.value !== "" && form.value.length < 11) {
     return true;
   }
   return false;
@@ -422,15 +575,12 @@ function checkForm(form) {
 //円柱
 function rotateMouseMove(e) {
   Yi = prevMouseX - e.pageX;
-  // Xi = prevMouseY - e.pageY;
-  Xi = 0;
-  // board.style.transform = `rotateX(${Xi * littleAngle}deg) rotateY(${-Yi * littleAngle}deg) rotateZ(0deg)`;
   window.requestAnimationFrame(rotate);
 }
 
 const rotate = () => {
   board.style.transform = `rotateY(${-Yi * littleAngle}deg)`;
-}
+};
 
 function rotateTouchMove(e) {
   // e.preventDefault();
@@ -442,29 +592,29 @@ function rotateTouchMove(e) {
 }
 
 const addTimeAnime = () => {
-  addTimeObj.textContent = '+' + addTime;
-  addTimeObj.style.display = 'block';
+  addTimeObj.textContent = "+" + addTime;
+  addTimeObj.style.display = "block";
   window.setTimeout(() => {
-    addTimeObj.style.display = 'none';
-  }, 1000)
-}
+    addTimeObj.style.display = "none";
+  }, 1000);
+};
 
 function elapsedTimeFontSize() {
-  if (window.matchMedia('(max-width:500px)').matches) {
-    elapsedTimeObj.style.fontSize = '2.5rem';
+  if (window.matchMedia("(max-width:500px)").matches) {
+    elapsedTimeObj.style.fontSize = "2.5rem";
     return;
   }
   if (elapsedTimeObj.textContent.length < 9) {
-    elapsedTimeObj.style.fontSize = '3.2rem';
+    elapsedTimeObj.style.fontSize = "3.2rem";
   } else if (elapsedTimeObj.textContent.length === 9) {
-    elapsedTimeObj.style.fontSize = '3rem';
+    elapsedTimeObj.style.fontSize = "3rem";
   } else if (elapsedTimeObj.textContent.length === 10) {
-    elapsedTimeObj.style.fontSize = '2.8rem';
+    elapsedTimeObj.style.fontSize = "2.8rem";
   } else if (elapsedTimeObj.textContent.length === 11) {
-    elapsedTimeObj.style.fontSize = '2.6rem';
+    elapsedTimeObj.style.fontSize = "2.6rem";
   } else if (elapsedTimeObj.textContent.length === 12) {
-    elapsedTimeObj.style.fontSize = '2.4rem';
+    elapsedTimeObj.style.fontSize = "2.4rem";
   } else {
-    elapsedTimeObj.style.fontSize = '2.0rem';
+    elapsedTimeObj.style.fontSize = "2.0rem";
   }
 }
