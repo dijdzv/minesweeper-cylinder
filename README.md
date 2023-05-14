@@ -1,5 +1,12 @@
 # minesweeper-cylinder
 
-円柱型のマインスイーパー
+> Created for an on-campus contest on the theme of impact.
+> 
+> My first piece.
 
-2022/1~2022/3
+## startup command
+Required Tools
+- docker
+```sh
+docker compose up -d
+```
