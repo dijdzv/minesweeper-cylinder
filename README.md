@@ -4,6 +4,8 @@
 > 
 > My first piece.
 
+To view the [demo](./demo/21_hew_demo.mp4), you will need to download it.
+
 ## startup command
 Required Tools
 - docker
