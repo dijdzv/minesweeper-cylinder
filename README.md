@@ -6,7 +6,7 @@
 
 To view the [demo](./demo/21_hew_demo.mp4), you will need to download it.
 
-## startup command
+## Startup command
 Required Tools
 - docker
 ```sh
